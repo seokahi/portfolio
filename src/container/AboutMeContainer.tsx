@@ -7,7 +7,7 @@ export default function AboutUsContainer() {
         <AboutUsContainerLayout>
             <div>
                 <PageTitleBox>
-                    <AboutMeTitle title='About ME' />
+                    <AboutMeTitle title='About skh' />
                 </PageTitleBox>
             </div>
         </AboutUsContainerLayout>
