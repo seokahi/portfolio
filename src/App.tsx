@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to={'home'} />} />
         <Route path="/" element={<MainPage />}>
-          <Route path="home" element={<HomePage />} /> {/* HomePage 라우트 추가 */}
+          <Route path="home" element={<HomePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

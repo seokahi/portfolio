@@ -1,12 +1,11 @@
 import Navbar from "../component/home/Navbar";
-
-import InfoContainer from "./InfoContainer";
+import Info from "./InfoContainer";
 
 
 export default function HeaderContainer() {
     return (
         <>
-        <InfoContainer/>
+            <Info/>
             <Navbar />
         </>
     );

@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   padding: 1.25rem 2rem;
   margin: 0 auto;
   display: flex;
-
+  z-index: 9999; 
   @media (max-width: 1140px) {
     max-width: 67.25rem;
   }

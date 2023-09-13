@@ -1,20 +1,40 @@
-
+import React from 'react';
 import styled from 'styled-components';
-import { AboutMeTitle } from '../component/home/AboutMeTitle';
+import { AboutMeList } from '../component/home/NavInfo';
+import { infoList } from '../resource/info';
+import { AboutMeTitle } from '../component/home/NavTitle';
 
-export default function AboutUsContainer() {
+
+export default function  AboutMeContainers  ({mref})  {
     return (
-        <AboutUsContainerLayout>
-            <div>
-                <PageTitleBox>
-                    <AboutMeTitle title='About skh' />
-                </PageTitleBox>
-            </div>
-        </AboutUsContainerLayout>
+        <AboutMeContainersLayout ref={mref} >
+            <PageTitleBox>
+                <AboutMeTitle title='About Me' />
+                <AboutMeLists>
+                    {infoList.map((info, index) => (
+                        <AboutMeList key={index} infos={info} />
+                    ))}
+                </AboutMeLists>
+            </PageTitleBox>
+        </AboutMeContainersLayout>
     );
 }
 
-const AboutUsContainerLayout = styled.div`
+const AboutMeLists = styled.div`
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    max-width: 59rem;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    display: flex;
+    display: -ms-flexbox;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    flex: 1 1 40%;
+`;
+
+const AboutMeContainersLayout = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 15rem;
@@ -33,6 +53,7 @@ const AboutUsContainerLayout = styled.div`
 `;
 
 const PageTitleBox = styled.div`
+    font-family: 'GangwonEdu_OTFBoldA';
     padding-top: 150px;
     @media (max-width: 1800px) {
         padding-top: 100px;
@@ -41,5 +62,3 @@ const PageTitleBox = styled.div`
         padding-top: 50px;
     }
 `;
-
-
