@@ -1,13 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 import { AboutMeList } from '../component/home/NavInfo';
 import { infoList } from '../resource/info';
 import { AboutMeTitle } from '../component/home/NavTitle';
 
 
-export default function  AboutMeContainers  ({mref})  {
+export default function  AboutMeContainers  ()  {
     return (
-        <AboutMeContainersLayout ref={mref} >
+        <AboutMeContainersLayout >
             <PageTitleBox>
                 <AboutMeTitle title='About Me' />
                 <AboutMeLists>
