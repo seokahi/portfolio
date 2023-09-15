@@ -1,4 +1,4 @@
-import Navbar from "../component/home/Navbar";
+import Navbar from "../component/common/Navbar";
 import Info from "./InfoContainer";
 
 

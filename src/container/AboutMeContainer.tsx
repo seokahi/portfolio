@@ -4,7 +4,7 @@ import { infoList } from '../resource/info';
 import { AboutMeTitle } from '../component/home/NavTitle';
 
 
-export default function  AboutMeContainers  ()  {
+export default function  AboutMeContainer  ()  {
     return (
         <AboutMeContainersLayout >
             <PageTitleBox>
