@@ -1,5 +1,5 @@
 import Navbar from "../component/common/Navbar";
-import Info from "./InfoContainer";
+import Info from "./IntroduceContainer";
 
 
 export default function HeaderContainer() {

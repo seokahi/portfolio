@@ -14,6 +14,21 @@ export default function Navbar() {
 
 const Wrapper = styled.div`
   position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    padding: 1rem 4.5rem;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    border-bottom: 1px solid white;
+    font-weight: 800;
+    font-size: 15px;
+    background-color: black;
+    border-bottom-left-radius: 10vw;
+  border-bottom-right-radius: 10vw;
+  /* position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -24,7 +39,6 @@ const Wrapper = styled.div`
   padding: 1.25rem 2rem;
   margin: 0 auto;
   display: flex;
-  z-index: 9999; 
   @media (max-width: 1140px) {
     max-width: 67.25rem;
   }
@@ -32,11 +46,18 @@ const Wrapper = styled.div`
   @media (max-width: 576px) {
     height: auto; 
     flex-direction: column;
+  } */
+  @media (max-width: 1140px) {
+    max-width: 67.25rem;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
   }
 `;
 
 const NavLogo = styled.a`
-  display: flex;
+  /* display: flex;
   align-items: center;
   flex-grow: 1;
   font-weight: 700;
@@ -46,6 +67,12 @@ const NavLogo = styled.a`
   cursor: pointer;
 
   &:hover {
-    color:#6e6657; /* Increase the font weight on hover */
-  }
+    color:#6e6657; 
+  */
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    position: relative;
 `;

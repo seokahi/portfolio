@@ -8,6 +8,7 @@ const Style = createGlobalStyle`
 
   body {
     margin: 0;
+    width: 100vw;
   }
 
   nav {

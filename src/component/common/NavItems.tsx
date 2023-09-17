@@ -3,7 +3,7 @@ import { navBarList } from '../../resource/navbar';
 
 
 export default function NavItems() {
-
+    
     return (
         <Items>
             {navBarList.map((items, index) => (
@@ -18,22 +18,30 @@ export default function NavItems() {
 }
 
 const Items = styled.div`
-    display: flex;
+    /* display: flex;
     max-width: 500px;
     justify-content: space-between;
     align-items: center;
+    flex-grow: 1; */
+    display: flex;
+    max-width: 500px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
     flex-grow: 1;
 `;
 
 const ItemWrapper = styled.div`
-    font-weight: 700;
+    /* font-weight: 700;
     font-size: 1rem;
     color: wheat;
     line-height: 2rem;
     cursor: pointer;
     &:hover {
-    color:#6e6657; /* Increase the font weight on hover */
-  }
+    color:#6e6657; Increase the font weight on hover
+  } */
 `;
 
 
