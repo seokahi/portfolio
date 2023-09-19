@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
+
 import styled from 'styled-components';
-import { setCurrent } from '../../modules/homeSlice';
+
 
 
 export default function IntroduceText() {

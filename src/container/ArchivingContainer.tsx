@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { AboutMeList } from '../component/information/InfoDetail';
-import { infoList } from '../resource/info';
+
 import { AboutMeTitle } from '../component/information/InfoTitle';
 
 
