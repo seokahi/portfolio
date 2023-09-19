@@ -59,22 +59,22 @@ const TextWrapper = styled.div`
     } */
 `;
 
-const InfoText = styled.div`
-    /* text-align: center;
-    font-weight: 900;
-    font-size: 2.5rem; */
-`;
+// const InfoText = styled.div`
+//     /* text-align: center;
+//     font-weight: 900;
+//     font-size: 2.5rem; */
+// `;
 
-const MoveButton = styled.button`
-    /* display: block;
-    text-align: bottom;
-    margin:2.5rem auto;
-    padding:1rem;
-    border-radius:20px;
-    background-color: wheat;
-    color:white;
-    border: 2px solid wheat;
-    font-size:1.3rem;
-    font-family: 'GangwonEdu_OTFBoldA'; */
+// const MoveButton = styled.button`
+//     /* display: block;
+//     text-align: bottom;
+//     margin:2.5rem auto;
+//     padding:1rem;
+//     border-radius:20px;
+//     background-color: wheat;
+//     color:white;
+//     border: 2px solid wheat;
+//     font-size:1.3rem;
+//     font-family: 'GangwonEdu_OTFBoldA'; */
 
-`
+// `
