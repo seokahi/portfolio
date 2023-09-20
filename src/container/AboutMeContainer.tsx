@@ -2,11 +2,14 @@ import styled from 'styled-components';
 import { AboutMeList } from '../component/information/InfoDetail';
 import { infoList } from '../resource/info';
 import { AboutMeTitle } from '../component/information/InfoTitle';
-
-
-export default function  AboutMeContainer  ()  {
+import React, { RefObject } from 'react';
+interface AboutMeContainerProps {
+    mref: RefObject<HTMLDivElement>;
+  }
+  
+  export default function AboutMeContainer({ mref }: AboutMeContainerProps) {
     return (
-        <AboutMeContainersLayout >
+        <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
                 <AboutMeTitle title='About Me' />
                 <AboutMeLists>

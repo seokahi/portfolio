@@ -1,17 +1,35 @@
 import styled from 'styled-components';
 import { navBarList } from '../../resource/navbar';
+import { Link } from 'react-router-dom';
+import { setCurrentHome  } from '../../modules/homeSlice';
+import { useDispatch } from 'react-redux';
 
 
 export default function NavItems() {
-    
+    const dispatch = useDispatch();
+    const handleChildClick = (e:React.MouseEvent, title:string) => {
+        dispatch(setCurrentHome (title));
+    };
     return (
         <Items>
             {navBarList.map((items, index) => (
-                <ItemWrapper key={index}>
+                items.title === 'Home' ? null : (
+                    <ItemWrapper 
+                        key={index} 
+                        to={'home'} 
+                        state={{ title: items.title }} 
+                        onClick={(e) =>
+                            handleChildClick(
+                                e,
+                                items.title
+                            )
+                        }
+                    >
                         <div>
                             {items.title}
                         </div>
-                </ItemWrapper>
+                    </ItemWrapper>
+                )
             ))}
         </Items>
     );
@@ -33,15 +51,16 @@ const Items = styled.div`
     flex-grow: 1;
 `;
 
-const ItemWrapper = styled.div`
-    /* font-weight: 700;
+const ItemWrapper = styled(Link)`
+
+    font-weight: 700;
     font-size: 1rem;
     color: wheat;
     line-height: 2rem;
     cursor: pointer;
     &:hover {
-    color:#6e6657; Increase the font weight on hover
-  } */
+    color:#6e6657;
+  }
 `;
 
 

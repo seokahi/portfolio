@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import NavItems from './NavItems';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
     <>
       <Wrapper>
-        <NavLogo>SKH's Portfolio</NavLogo>
+        <NavLogo to={'/home'}>SKH's Portfolio</NavLogo>
         <NavItems />
       </Wrapper>
     </>
@@ -28,6 +29,8 @@ const Wrapper = styled.div`
     background-color: black;
     border-bottom-left-radius: 10vw;
   border-bottom-right-radius: 10vw;
+  z-index: 2000;
+  opacity: 1;
   /* position: fixed;
   top: 0;
   left: 0;
@@ -56,7 +59,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const NavLogo = styled.a`
+const NavLogo = styled(Link)`
   /* display: flex;
   align-items: center;
   flex-grow: 1;
@@ -75,4 +78,11 @@ const NavLogo = styled.a`
     -webkit-box-flex: 1;
     flex-grow: 1;
     position: relative;
+     align-items: center;
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 1rem;
+  color: wheat;
+  line-height: 2rem;
+  cursor: pointer;
 `;

@@ -20,4 +20,4 @@ export const homeSlice = createSlice({
   },
 });
 
-export const { setCurrent } = homeSlice.actions;
+export const { setCurrent: setCurrentHome } = homeSlice.actions; // 변경된 이름
