@@ -9,6 +9,7 @@ export default function NavItems() {
     const dispatch = useDispatch();
     const handleChildClick = (e:React.MouseEvent, title:string) => {
         dispatch(setCurrentHome (title));
+        console.log(e);
     };
     return (
         <Items>

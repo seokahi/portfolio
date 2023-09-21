@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { AboutMeList } from '../component/information/InfoDetail';
 import { infoList } from '../resource/info';
 import { AboutMeTitle } from '../component/information/InfoTitle';
-import React, { RefObject } from 'react';
+import  { RefObject } from 'react';
 interface AboutMeContainerProps {
     mref: RefObject<HTMLDivElement>;
   }

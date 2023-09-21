@@ -17,7 +17,7 @@ export default function HomePage() {
     const location = useLocation();
     console.log(location,"이거뭐야");
     const scrollRef = useRef<Array<React.RefObject<HTMLDivElement>>>([useRef(null), useRef(null), useRef(null), useRef(null)]);
-    const current = useSelector((state:RootState)=> state.rootReducer.home.current);
+    const current = useSelector((state:RootState)=> state.home.current);
 
     const dispatch = useDispatch();
 
@@ -26,6 +26,9 @@ export default function HomePage() {
     }, [dispatch, location.state?.title]);
 
     useEffect(() => { 
+        const returnFunction = () => {
+            dispatch(setCurrentHome(''));
+        }
         switch (current) {
             case 'Home':
                 window.scrollTo(0, 0);
@@ -46,7 +49,7 @@ export default function HomePage() {
                 break;
         }
     
-        return () => dispatch(setCurrentHome(''));
+        return returnFunction;
     }, [current, dispatch]);
 
     return (
