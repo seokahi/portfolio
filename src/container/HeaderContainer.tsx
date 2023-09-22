@@ -3,21 +3,39 @@ import Navbar from "../component/common/Navbar";
 import Info from "./IntroduceContainer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setCurrentHome } from "../modules/homeSlice";
+import { setCurrent } from "../modules/homeSlice";
+import styled from 'styled-components';
 
 
 export default function HeaderContainer() {
     const dispatch = useDispatch();
     const location = useLocation();
-    console.log(location, "???");
-
     useEffect(() => {
-        dispatch(setCurrentHome(location.state?.title || 'Home'));
-    }, [dispatch, location.state?.title]);
+        dispatch(setCurrent('null'));
+    }, [dispatch]);
+    console.log(location);
+
+
     return (
-        <div>
-            <Info/>
-            <Navbar />
-        </div>
+    <>
+        {location.pathname == '/home' ? (
+                    <Info />
+                ) : (
+                    <Spacer />
+                )}
+                
+         <Navbar />       
+    </>
+        // <div>
+        //     <Info/>
+        //     <Navbar />
+        // </div>
     );
 }
+
+const Spacer = styled.div`
+    height: 8.25rem;
+    @media (max-width: 576px) {
+        height: 9rem;
+    }
+`;

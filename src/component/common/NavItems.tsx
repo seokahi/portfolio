@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { navBarList } from '../../resource/navbar';
 import { Link } from 'react-router-dom';
-import { setCurrentHome  } from '../../modules/homeSlice';
+import { setCurrent  } from '../../modules/homeSlice';
 import { useDispatch } from 'react-redux';
 
 
 export default function NavItems() {
     const dispatch = useDispatch();
     const handleChildClick = (e:React.MouseEvent, title:string) => {
-        dispatch(setCurrentHome (title));
+        dispatch(setCurrent (title));
         console.log(e);
     };
     return (
@@ -17,7 +17,7 @@ export default function NavItems() {
                 items.title === 'Home' ? null : (
                     <ItemWrapper 
                         key={index} 
-                        to={'home'} 
+                        to={'/home'} 
                         state={{ title: items.title }} 
                         onClick={(e) =>
                             handleChildClick(

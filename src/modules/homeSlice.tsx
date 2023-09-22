@@ -1,23 +1,23 @@
-// homeSlice.ts
-
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 interface HomeState {
   current: string;
 }
 
 const initialState: HomeState = {
-  current: "null",
+  current: 'null',
 };
 
 export const homeSlice = createSlice({
   name: 'home',
   initialState,
   reducers: {
-    setCurrent: (state, action: PayloadAction<string>) => {
+    setCurrent: (state, action) => {
       state.current = action.payload;
     },
   },
 });
 
-export const { setCurrent: setCurrentHome } = homeSlice.actions; // 변경된 이름
+export const { setCurrent } = homeSlice.actions;
+
+// RootReducer.ts
