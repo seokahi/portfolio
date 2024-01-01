@@ -1,22 +1,24 @@
 
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { setCurrent } from '../../modules/homeSlice';
+import { useDispatch } from 'react-redux';
 
 
 
 export default function IntroduceText() {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // const handleTouch = () => {
-    //     dispatch(setCurrent("About SKH"));
-    // }
-
-
+    const handleChildClick = () => {
+        dispatch(setCurrent("About me"));
+    };
     return (
         <TextWrapper>
                 <h1>- 서가희 -</h1>
                 <h2>프론트엔드 개발자 포트폴리오</h2>
             {/* <span>공부가 제일 쉬웠어요.</span>
             <MoveButton>자세히 보기</MoveButton> */}
+            <MoveButton onClick={handleChildClick}>자세히 보기</MoveButton>
         </TextWrapper>
     );
 }
@@ -65,16 +67,31 @@ const TextWrapper = styled.div`
 //     font-size: 2.5rem; */
 // `;
 
-// const MoveButton = styled.button`
-//     /* display: block;
-//     text-align: bottom;
-//     margin:2.5rem auto;
-//     padding:1rem;
-//     border-radius:20px;
-//     background-color: wheat;
-//     color:white;
-//     border: 2px solid wheat;
-//     font-size:1.3rem;
-//     font-family: 'GangwonEdu_OTFBoldA'; */
+const MoveButton = styled.button`
+    /* display: block;
+    text-align: bottom;
+    margin:2.5rem auto;
+    padding:1rem;
+    border-radius:20px;
+    background-color: wheat;
+    color:white;
+    border: 2px solid wheat;
+    font-size:1.3rem;
+    font-family: 'GangwonEdu_OTFBoldA'; */
+    background: rgba(133, 133, 133, 0.4);
+    border: none;
+    border-radius: 50%;
+    color:white;
+    &::before,&::after {
+        content: '';
+        
+    background: #ffffff6b;
+    
+    margin: auto;
+    border-radius: 50%;
+    -webkit-animation: waveAnimation 3s infinite linear;
+    animation: waveAnimation 3s infinite linear;
+    }
+`
 
-// `
+

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { AboutMeList } from '../component/information/InfoDetail';
-import { infoList } from '../resource/info';
+import { infoList } from '../resource/string/info';
 import { AboutMeTitle } from '../component/information/InfoTitle';
 import  { RefObject } from 'react';
 interface ArchivingContainerProps {

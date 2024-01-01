@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { AboutMeTitle } from '../component/information/InfoTitle';
 import  { RefObject } from 'react';
 import { AboutMeList } from '../component/information/InfoDetail';
-import { infoList } from '../resource/info';
+import { infoList } from '../resource/string/info';
 interface ProjectontainerProps {
     mref: RefObject<HTMLDivElement>;
 }

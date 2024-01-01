@@ -10,6 +10,8 @@ export default function MainPage() {
             window.scrollTo(0, 0);
         }
     }, [pathname]);
+
+    
     return (
         <>
             <div>
