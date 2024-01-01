@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { AboutMeList } from '../component/information/InfoDetail';
+import { AboutMeList } from '../component/aboutme/AboutmeDetail';
 import { infoList } from '../resource/string/info';
-import { AboutMeTitle } from '../component/information/InfoTitle';
+import { AboutMeTitle } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
 interface ArchivingContainerProps {
     mref: RefObject<HTMLDivElement>;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import IntroduceText from '../component/introduce/MyInfoText'
+import IntroduceText from '../component/introduce/introduceText'
 
 export default function MyIntroduce() {
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { navBarList } from '../../resource/navbar';
+import { navBarList } from '../../resource/string/navbar';
 import { Link } from 'react-router-dom';
 import { setCurrent  } from '../../modules/homeSlice';
 import { useDispatch } from 'react-redux';

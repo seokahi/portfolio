@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { AboutMeTitle } from '../component/information/InfoTitle';
+import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
-import { AboutMeList } from '../component/information/InfoDetail';
-import { infoList } from '../resource/string/info';
+import { AboutMeList } from '../component/aboutme/AboutmeDetail';
+import { skillList } from '../resource/string/image';
+
 interface SkillContainerProps {
     mref: RefObject<HTMLDivElement>;
 }
@@ -11,18 +12,18 @@ interface SkillContainerProps {
     return (
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
-                <AboutMeTitle title='Skills' />
-                <AboutMeLists>
-                    {infoList.map((info, index) => (
+                <Title title='Skills' />
+                <SkillLists>
+                    {skillList.map((info, index) => (
                         <AboutMeList key={index} infos={info} />
                     ))}
-                </AboutMeLists>
+                </SkillLists>
             </PageTitleBox>
         </AboutMeContainersLayout>
     );
 }
 
-const AboutMeLists = styled.div`
+const SkillLists = styled.div`
     -webkit-box-sizing: border-box;
     width: 100%;
     max-width: 59rem;

@@ -3,7 +3,7 @@ import img from "../../assets/img/share-icon.png"
 interface titleTYpe{
     title:string;
 }
-export const AboutMeTitle = (title:titleTYpe) => {
+export const Title = (title:titleTYpe) => {
     return (
         <TitleTextWrapper>
                 <TitleShareImg src={img} alt="share-icon"/>
