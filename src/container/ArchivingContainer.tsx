@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { AboutMeList } from '../component/aboutme/AboutmeDetail';
 import { infoList } from '../resource/string/info';
-import { AboutMeTitle } from '../component/common/PageTitle';
+import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
 interface ArchivingContainerProps {
     mref: RefObject<HTMLDivElement>;
@@ -11,7 +11,7 @@ interface ArchivingContainerProps {
     return (
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
-                <AboutMeTitle title='Archiving' />
+                <Title title='Archiving' />
                 <AboutMeLists>
                     {infoList.map((info, index) => (
                         <AboutMeList key={index} infos={info} />

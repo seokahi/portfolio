@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AboutMeTitle } from '../component/common/PageTitle';
+import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
 import { AboutMeList } from '../component/aboutme/AboutmeDetail';
 import { infoList } from '../resource/string/info';
@@ -11,7 +11,7 @@ interface ProjectontainerProps {
     return (
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
-                <AboutMeTitle title='Projects' />
+                <Title title='Projects' />
                 <AboutMeLists>
                     {infoList.map((info, index) => (
                         <AboutMeList key={index} infos={info} />
