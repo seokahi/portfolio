@@ -11,7 +11,6 @@ import { RootState } from '../modules/RootReducer';
 
 export default function HomePage() {
     const location = useLocation();
-    console.log(location, "이거뭐야");
     const scrollRef = useRef<Array<React.RefObject<HTMLDivElement>>>([
         useRef(null),
         useRef(null),

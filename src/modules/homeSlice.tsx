@@ -20,4 +20,4 @@ export const homeSlice = createSlice({
 
 export const { setCurrent } = homeSlice.actions;
 
-// RootReducer.ts
+
