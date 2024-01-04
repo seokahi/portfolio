@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent } from '../modules/homeSlice';
 import { RootState } from '../modules/RootReducer';
 
-import AboutMe from '../container/AboutmeContainer';
+import AboutMe from '../container/about';
 export default function HomePage() {
     const location = useLocation();
     const scrollRef = useRef<Array<React.RefObject<HTMLDivElement>>>([
