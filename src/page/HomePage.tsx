@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import AboutMeContainer from '../container/AboutmeContainer';
+
 import ArchivingContainer from '../container/ArchivingContainer';
 import SkillContainer from '../container/SkillContainer';
 import ProjectContainer from '../container/ProjectsContainer';
@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent } from '../modules/homeSlice';
 import { RootState } from '../modules/RootReducer';
+import AboutMeContainer from '../container/AboutmeContainer';
 
 export default function HomePage() {
     const location = useLocation();
