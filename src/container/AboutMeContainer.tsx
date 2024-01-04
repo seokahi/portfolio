@@ -7,7 +7,7 @@ interface AboutMeContainerProps {
     mref: RefObject<HTMLDivElement>;
   }
   
-  export default function AboutMeContainer({ mref }: AboutMeContainerProps) {
+  export default function AboutMe({ mref }: AboutMeContainerProps) {
     return (
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>

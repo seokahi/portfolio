@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrent } from '../modules/homeSlice';
 import { RootState } from '../modules/RootReducer';
-import AboutMeContainer from '../container/AboutmeContainer';
+import AboutMe from '../container/AboutmeContainer';
 
 export default function HomePage() {
     const location = useLocation();
@@ -55,7 +55,7 @@ export default function HomePage() {
 
     return (
         <HomePageWrapper>
-            <AboutMeContainer mref={scrollRef.current[0]} />
+            <AboutMe mref={scrollRef.current[0]} />
             <SkillContainer mref={scrollRef.current[1]} />
             <ArchivingContainer mref={scrollRef.current[2]} />
             <ProjectContainer mref={scrollRef.current[3]} />
