@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import img from "../../assets/img/share-icon.png"
+import img from "../../resource/img/share-icon.png"
 interface titleTYpe{
     title:string;
 }

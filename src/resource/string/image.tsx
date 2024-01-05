@@ -1,56 +1,59 @@
+import html from "../img/html-logo.png"
+
 export const skillList = [
     {
         skill:'FrontEnd',
         img: [
-            {img:"/src/assets/img/html-logo.png"},
-            {img:"/src/assets/img/css-logo.png"},
-            {img:"/src/assets/img/js-logo.png"}
+            {img:html},
+            {img:html},
+            {img:html},
         ]
     },
     {
         skill:'BackEnd',
         img:[
-            {img:"/src/assets/img/html-logo.png"},
-            {img:"/src/assets/img/css-logo.png"},
-            {img:"/src/assets/img/js-logo.png"}
+            {img:html},
+            {img:html},
+            {img:html},
         ]
     },
     {
         skill:'BackEnd',
         img:[
-            {img:"/src/assets/img/html-logo.png"},
-            {img:"/src/assets/img/css-logo.png"},
-            {img:"/src/assets/img/js-logo.png"}
+            {img:html},
+            {img:html},
+            {img:html},
         ]
     },
     {
         skill:'Mobile App',
         img:[
-            {img:"/src/assets/img/html-logo.png"},
-            {img:"/src/assets/img/css-logo.png"},
-            {img:"/src/assets/img/js-logo.png"}
+            {img:html},
+            {img:html},
+            {img:html},
         ]
     },
     {
         skill:'Deployment',
         img:[
-            {img:"/src/assets/img/html-logo.png"},
-            {img:"/src/assets/img/css-logo.png"},
-            {img:"/src/assets/img/js-logo.png"}
+            {img:html},
+            {img:html},
+            {img:html},
         ]
     },
     {
         skill:'Community',
         img:[
-            {img:"/src/assets/img/html-logo.png"},
-            {img:"/src/assets/img/css-logo.png"},
-            {img:"/src/assets/img/js-logo.png"}
+            {img:html},
+            {img:html},
+            {img:html},
         ]
     },
     {
         skill:'Extra',
         img:[
-            {img:"/src/assets/img/html-logo.png"},
+            {img:html},
+
         ]
     },
 
