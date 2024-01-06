@@ -2,8 +2,22 @@ import { createGlobalStyle } from 'styled-components';
 
 
 const Style = createGlobalStyle`
+  @font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+      }
+
+      @font-face {
+      font-family: 'GangwonEdu_OTFBoldA';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+
   * {
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'GangwonEduPowerExtraBoldA', sans-serif;
   }
 
   body {
@@ -32,20 +46,7 @@ const Style = createGlobalStyle`
     text-decoration: none;
   }
 
-  @font-face {
-  font-family: 'GangwonEduPowerExtraBoldA';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-    }
-
-    @font-face {
-    font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    }
-
+  
 `;
 
 export default Style;
