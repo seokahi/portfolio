@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import { setCurrent } from '../../modules/homeSlice';
+import { setCurrent } from '../../reducer/homeSlice';
 import { useDispatch } from 'react-redux';
 
 
