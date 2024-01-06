@@ -6,8 +6,8 @@ import SkillContainer from '../container/SkillContainer';
 import ProjectContainer from '../container/ProjectsContainer';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrent } from '../modules/homeSlice';
-import { RootState } from '../modules/RootReducer';
+import { setCurrent } from '../reducer/homeSlice';
+
 
 import AboutMe from '../container/about';
 export default function HomePage() {
@@ -18,7 +18,7 @@ export default function HomePage() {
         useRef(null),
         useRef(null)
     ]);
-    const current = useSelector((state: RootState) => state.home.current);
+    const current = useSelector((state:any) => state.home.current);
     console.log(current);
     const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ export default function HomePage() {
 
     useEffect(() => {
         const returnFunction = () => {
-            dispatch(setCurrent('null'));
+            dispatch(setCurrent(""));
         }
         switch (current) {
             case 'Home':
