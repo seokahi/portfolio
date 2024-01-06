@@ -3,7 +3,7 @@ import Navbar from "../component/common/Navbar";
 import Info from "./IntroduceContainer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setCurrent } from "../modules/homeSlice";
+import { setCurrent } from "../reducer/homeSlice";
 import styled from 'styled-components';
 
 
@@ -11,7 +11,7 @@ export default function HeaderContainer() {
     const dispatch = useDispatch();
     const location = useLocation();
     useEffect(() => {
-        dispatch(setCurrent('null'));
+        dispatch(setCurrent(''));
     }, [dispatch]);
     console.log(location);
 
