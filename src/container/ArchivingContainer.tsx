@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { AboutMeList } from '../component/aboutme/AboutmeDetail';
-import { infoList } from '../resource/string/info';
 import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
+import { ArchivingList } from '../resource/string/archiving';
+import { ArchivingInfoList } from '../component/archiving/ArchivingDetail';
+
 interface ArchivingContainerProps {
     mref: RefObject<HTMLDivElement>;
   }
@@ -12,17 +14,17 @@ interface ArchivingContainerProps {
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
                 <Title title='Archiving' />
-                <AboutMeLists>
-                    {infoList.map((info, index) => (
-                        <AboutMeList key={index} infos={info} />
+                <ArchivingLists>
+                    {ArchivingList.map((info, index) => (
+                        <ArchivingInfoList key={index} infos={info} />
                     ))}
-                </AboutMeLists>
+                </ArchivingLists>
             </PageTitleBox>
         </AboutMeContainersLayout>
     );
 }
 
-const AboutMeLists = styled.div`
+const ArchivingLists = styled.div`
     -webkit-box-sizing: border-box;
     width: 100%;
     max-width: 59rem;
