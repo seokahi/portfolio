@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
-import { AboutMeList } from '../component/aboutme/AboutmeDetail';
 import { ProjectList } from '../resource/string/project';
 import { ProjectInfo } from '../component/project/Project';
 

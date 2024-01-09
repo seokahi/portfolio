@@ -14,7 +14,8 @@ export default function Navbar() {
 }
 
 const Wrapper = styled.div`
-  position: fixed;
+    font-family: 'GangwonEduPowerExtraBoldA';
+    position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -31,25 +32,7 @@ const Wrapper = styled.div`
   border-bottom-right-radius: 10vw;
   z-index: 2000;
   opacity: 1;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  -webkit-box-sizing: border-box;
-  width: 100%;
-  max-width: 71.25rem;
-  height: 4.5rem;
-  padding: 1.25rem 2rem;
-  margin: 0 auto;
-  display: flex;
-  @media (max-width: 1140px) {
-    max-width: 67.25rem;
-  }
-
-  @media (max-width: 576px) {
-    height: auto; 
-    flex-direction: column;
-  } */
+ 
   @media (max-width: 1140px) {
     max-width: 67.25rem;
   }

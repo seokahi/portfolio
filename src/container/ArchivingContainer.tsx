@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { AboutMeList } from '../component/aboutme/AboutmeDetail';
 import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
 import { ArchivingList } from '../resource/string/archiving';
