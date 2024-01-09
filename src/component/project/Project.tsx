@@ -53,10 +53,10 @@ const TitleText = styled.div`
     font-size: 1.25rem;
 `
 
-const TitleShareImg = styled.img`
- width: 2rem;
-    min-width: 2rem;
-    height: 2rem;
-    margin-top: .2rem;
-    margin-right: 2rem;
-`
+// const TitleShareImg = styled.img`
+//  width: 2rem;
+//     min-width: 2rem;
+//     height: 2rem;
+//     margin-top: .2rem;
+//     margin-right: 2rem;
+// `
