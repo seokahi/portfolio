@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
 import { AboutMeList } from '../component/aboutme/AboutmeDetail';
-import { infoList } from '../resource/string/info';
+import { ProjectList } from '../resource/string/project';
+import { ProjectInfo } from '../component/project/Project';
+
 interface ProjectontainerProps {
     mref: RefObject<HTMLDivElement>;
 }
@@ -13,8 +15,8 @@ interface ProjectontainerProps {
             <PageTitleBox>
                 <Title title='Projects' />
                 <AboutMeLists>
-                    {infoList.map((info, index) => (
-                        <AboutMeList key={index} infos={info} />
+                    {ProjectList.map((info, index) => (
+                        <ProjectInfo key={index} infos={info} />
                     ))}
                 </AboutMeLists>
             </PageTitleBox>
