@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Title } from '../component/common/PageTitle';
 import  { RefObject } from 'react';
-import { ProjectList } from '../resource/string/project';
-import { ProjectInfo } from '../component/project/Project';
+import ProjectInfo from '../component/project/Project';
 
 interface ProjectontainerProps {
     mref: RefObject<HTMLDivElement>;
@@ -14,9 +13,7 @@ interface ProjectontainerProps {
             <PageTitleBox>
                 <Title title='Projects' />
                 <AboutMeLists>
-                    {ProjectList.map((info, index) => (
-                        <ProjectInfo key={index} infos={info} />
-                    ))}
+                   <ProjectInfo/> 
                 </AboutMeLists>
             </PageTitleBox>
         </AboutMeContainersLayout>
@@ -24,7 +21,7 @@ interface ProjectontainerProps {
 }
 
 const AboutMeLists = styled.div`
-    -webkit-box-sizing: border-box;
+    /* -webkit-box-sizing: border-box;
     width: 100%;
     max-width: 59rem;
     padding: 4rem 2rem;
@@ -34,11 +31,11 @@ const AboutMeLists = styled.div`
     flex-flow: row wrap;
     justify-content: space-between;
     -webkit-box-pack: justify;
-    flex: 1 1 40%;
+    flex: 1 1 40%; */
 `;
 
 const AboutMeContainersLayout = styled.div`
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr;
     row-gap: 15rem;
     @media (max-width: 1800px) {
@@ -52,7 +49,7 @@ const AboutMeContainersLayout = styled.div`
     }
     @media (max-width: 576px) {
         row-gap: 5rem;
-    }
+    } */
 `;
 
 const PageTitleBox = styled.div`

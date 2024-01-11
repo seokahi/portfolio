@@ -1,62 +1,70 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
+
+import { ProjectList } from '../../resource/string/project';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import Modal from './ProjectDetail';
 
 
 
-interface InfoType {
-  name: string;
-  content: string;
-  stack: string;
-}
+const ProjectInfo: React.FC = () => {
+  const [isOpenModal, setOpenModal] = useState<boolean>(false);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number>(-1);
 
-interface AboutMeListProps {
-  infos: InfoType; // props 이름을 infos로 변경
-}
- 
-export const ProjectInfo: React.FC<AboutMeListProps> = ({ infos }) => {
-    const [isOpenModal, setOpenModal] = useState<boolean>(false);
 
-    const onClickToggleModal = useCallback(() => {
-      setOpenModal(!isOpenModal);
-    }, [isOpenModal]);
-    return (
-      <TitleTextWrapper onClick={onClickToggleModal}>
-        {isOpenModal && (
-        <Modal onClickToggleModal={onClickToggleModal}>
-          이곳에 children이 들어갑니다.
-        </Modal>
-      )}
-        <button>
-        <TitleText>{infos.name}</TitleText>
-        <TitleText>{infos.content}</TitleText>
-        <TitleText>{infos.stack}</TitleText>
-        </button>
-      </TitleTextWrapper>
-    );
-  };
+  const onClickToggleModal = useCallback(() => {
+    setOpenModal(!isOpenModal);
+  }, [isOpenModal]);
 
-  
-const TitleTextWrapper = styled.div`
-    display: flex;
-    display: -ms-flexbox;
-    flex-flow: row nowrap;
-    width: 100%;
-    max-width: 14rem;
-    margin: 0 auto;
-    opacity: .8;
+  const onSelectProject = useCallback((index: number) => {
+    setSelectedProjectIndex(index);
+    setOpenModal(true);
+  }, []);
+
+  return (
+    <>
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={50}
+        slidesPerView={3}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}
+      >
+        {ProjectList.map((project, index) => (
+          <SwiperSlide key={index}>
+            <ProjectWrapper onClick={() => onSelectProject(index)}>
+              <TitleText>{project.name}</TitleText>
+              <TitleText>{project.content}</TitleText>
+              <TitleText>{project.stack}</TitleText>
+            </ProjectWrapper>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <Modal isOpenModal={isOpenModal} onClickToggleModal={onClickToggleModal} index={selectedProjectIndex} />
+    </>
+  );
+};
+
+
+const ProjectWrapper = styled.div`
+  cursor: pointer;
 `;
 
-const TitleText = styled.div`
-    margin-bottom: .5rem;
-    font-weight: 700;
-    font-size: 1.25rem;
-`
+const TitleText = styled.p`
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+`;
 
-// const TitleShareImg = styled.img`
-//  width: 2rem;
-//     min-width: 2rem;
-//     height: 2rem;
-//     margin-top: .2rem;
-//     margin-right: 2rem;
-// `
+
+
+export default ProjectInfo;
