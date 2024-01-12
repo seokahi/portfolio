@@ -1,70 +1,45 @@
-import React, { PropsWithChildren } from "react";
+
 import styled from "styled-components";
+import { ProjectDetailList } from "../../resource/string/projectDetail";
 
-interface ModalDefaultType {
-  onClickToggleModal: () => void;
-}
-
-function Modal({
-  onClickToggleModal,
-  children,
-}: PropsWithChildren<ModalDefaultType>) {
+const Modal = ({ onClickToggleModal, isOpenModal, index }: { onClickToggleModal: () => void; isOpenModal: boolean; index: number }) => {
+  // 선택된 프로젝트 디테일 가져오기
+  const projectDetail = ProjectDetailList[index];
+  
   return (
-    <ModalContainer>
-      <DialogBox>{children}</DialogBox>
-      <Backdrop
-        onClick={(e: React.MouseEvent) => {
-          e.preventDefault();
-
-          if (onClickToggleModal) {
-            onClickToggleModal();
-          }
-        }}
-      />
+    <ModalContainer isOpen={isOpenModal}>
+      {isOpenModal && (
+        <ModalContent>
+          <button onClick={onClickToggleModal}>Close Modal</button>
+          {/* 선택된 프로젝트 디테일 보여주기 */}
+          <div>{projectDetail.title}</div>
+          <div>{projectDetail.content}</div>
+          <div>{projectDetail.link}</div>
+        </ModalContent>
+      )}
     </ModalContainer>
   );
-}
+};
 
-const ModalContainer = styled.div`
-    max-width: 1200px;
-  /* width: 100%;
-  height: 100%; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-
-  height: 100vh;
+const ModalContainer = styled.div<{ isOpen: boolean }>`
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
   position: fixed;
   top: 0;
-  z-index: 9999;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-const DialogBox = styled.dialog`
-  width: 800px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0 0 30px rgba(30, 30, 30, 0.185);
-  box-sizing: border-box;
+
+const ModalContent = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
-  z-index: 10000;
+  padding: 20px;
 `;
 
-const Backdrop = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.2);
-  max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-`;
 
 export default Modal;
