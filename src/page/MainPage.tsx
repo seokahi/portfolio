@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import HeaderContainer from "../container/HeaderContainer";
 import { useEffect } from "react";
+import Footer from "../component/common/Footer";
 
 export default function MainPage() {
     const { pathname } = useLocation();
@@ -21,7 +22,7 @@ export default function MainPage() {
                 <Outlet />
             </main>
             <footer>
-                
+                <Footer/>
             </footer>
         </>
     );
