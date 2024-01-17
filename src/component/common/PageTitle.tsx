@@ -6,7 +6,6 @@ interface titleTYpe{
 export const Title = (title:titleTYpe) => {
     return (
         <TitleTextWrapper>
-                <TitleShareImg src={img} alt="share-icon"/>
                 <TitleText>{title.title}</TitleText>
         </TitleTextWrapper>
     );
@@ -15,13 +14,11 @@ export const Title = (title:titleTYpe) => {
 const TitleTextWrapper = styled.div`
     display: table;
     position: relative;
-    margin: 0 auto 3rem;
+    padding:0px 2rem;
     font-family: 'GangwonEduPowerExtraBoldA';
 `;
 
 const TitleText = styled.div`
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
     font-weight: 400;
     font-size: 3rem;
     line-height: 1.5;
