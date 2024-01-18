@@ -4,9 +4,11 @@ export const navBarList = [
     },
     {
         title:'About me',
+        content:"It's about me."
     },
     {
         title:'Skills',
+        content:"It's about my skill."
     },
     {
         title:'Archiving',
