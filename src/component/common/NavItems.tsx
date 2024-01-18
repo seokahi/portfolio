@@ -15,21 +15,23 @@ export default function NavItems() {
         <Items>
             {navBarList.map((items, index) => (
                 items.title === 'Home' ? null : (
-                    <ItemWrapper 
-                        key={index} 
-                        to={'/home'} 
-                        state={{ title: items.title }} 
-                        onClick={(e) =>
-                            handleChildClick(
-                                e,
-                                items.title
-                            )
-                        }
-                    >
-                        <div>
-                            {items.title}
-                        </div>
-                    </ItemWrapper>
+                    <ItemsWrapper>
+                        <ItemWrapper 
+                            key={index} 
+                            to={'/home'} 
+                            state={{ title: items.title }} 
+                            onClick={(e) =>
+                                handleChildClick(
+                                    e,
+                                    items.title
+                                )
+                            }
+                        >
+                            <div>
+                                {items.title}
+                            </div>
+                        </ItemWrapper>
+                    </ItemsWrapper>
                 )
             ))}
         </Items>
@@ -37,11 +39,12 @@ export default function NavItems() {
 }
 
 const Items = styled.div`
-    /* display: flex;
-    max-width: 500px;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1; */
+    font-family: 'PartialSansKR-Regular';
+    /* width: 72%;
+    list-style: none;
+    display: flex;
+    gap:20px;
+    margin:0; */
     display: flex;
     max-width: 500px;
     -webkit-box-pack: justify;
@@ -50,14 +53,20 @@ const Items = styled.div`
     align-items: center;
     -webkit-box-flex: 1;
     flex-grow: 1;
+
+`;
+
+const ItemsWrapper = styled.div`
+
 `;
 
 const ItemWrapper = styled(Link)`
-
+            font-family: 'PartialSansKR-Regular';
     font-weight: 700;
-    font-size: 1rem;
-    color: wheat;
-    line-height: 2rem;
+    font-size: 15px;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
     cursor: pointer;
     &:hover {
     color:#6e6657;
