@@ -1,34 +1,26 @@
 import phoneImg from "../img/telephone-icon.png"
-
+import infoImg from "../img/info-logo.png"
+import emailImg from "../img/email-logo.png"
+import schoolImg from "../img/school-logo.png"
 export const infoList = [
     {
-        img:phoneImg,
-        info:"이름",
+        img:infoImg,
+        info:"NAME",
         detail:"서가희"
     },
     {
         img:phoneImg,
-        info:"생년월일",
-        detail:"00.10.26"
-    },
-    {
-        img:phoneImg,
-        info:"주소지",
-        detail:"경기도 고양시 일산서구"
-    },
-    {
-        img:phoneImg,
-        info:"연락처",
+        info:"PHONE",
         detail:"010-5833-3159"
     },
     {
-        img:phoneImg,
-        info:"이메일",
+        img:emailImg,
+        info:"EMAIL",
         detail:"skh9797@naver.com"
     },
     {
-        img:phoneImg,
-        info:"학력",
-        detail:"인천대학교(임베디드시스템공학과)"
+        img:schoolImg,
+        info:"school",
+        detail:"인천대학교 임베디드시스템공학과"
     },
 ]
