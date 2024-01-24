@@ -45,14 +45,16 @@ export const SkillList = () => {
 };
 
 const frameInAnimation = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
+ 0% {
+    transform : rotate(0deg)
   }
 
-  100%{
-    opacity: 1;
-    transform: translateX(0%);
+  /* 50% {
+    transform : rotate(180deg)
+  } */
+
+  100% {
+    transform : rotate(360deg)
   }
 `;
 
