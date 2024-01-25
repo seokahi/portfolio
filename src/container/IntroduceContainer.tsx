@@ -20,11 +20,17 @@ export default function MyIntroduce() {
 
 const IntroduceContainer = styled.div`
     width: 100%;
-    background: black;
+
     height: 100vh;
     box-sizing: border-box;
     padding-top: 7rem;
     border-bottom-left-radius: 50vh;
+    background: linear-gradient(90deg, #6F84E2 0%, #7BABE5 100%);
+
+
+
+
+
     @media (max-width: 768px) {
         border-bottom-left-radius: 20vw;
         border-bottom-right-radius: 20vw;
