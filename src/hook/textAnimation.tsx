@@ -35,7 +35,7 @@ const TextTypingAni = ({ text }: AnimationProps) => {
             } else {
                 setTextCount((prevCount) => prevCount + 1);
             }
-        }, 200); 
+        }, 100); 
 
         return () => clearInterval(typingInterval); 
     }, [text, textCount, isTypingPaused]);
