@@ -14,11 +14,6 @@ const TextTypingAni = ({ text }: AnimationProps) => {
         const typingInterval = setInterval(() => {
             if (isTypingPaused) {
                 clearInterval(typingInterval);
-                // setTimeout(() => {
-                //     setIsTypingPaused(false);
-                //     setTextCount(0);
-                //     setSequence("");
-                // }, 5000); 
                 return;
             }
 
@@ -43,7 +38,6 @@ const TextTypingAni = ({ text }: AnimationProps) => {
     return (
         <Title>
             {sequence}
-            <span className='inline-block align-top w-0.5 h-[1em] bg-white ml-1 blink'/>
         </Title>
     );
 };
