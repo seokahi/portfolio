@@ -21,7 +21,7 @@ export default function IntroduceText() {
         }, 2000);
 
         return () => clearTimeout(timer);
-    }, [buttonClicked]); // 버튼이 클릭되면 showButton을 다시 false로 설정하기 위해 buttonClicked를 의존성으로 설정
+    }, [buttonClicked]);
 
     useEffect(() => {
         if (!showButton && !buttonClicked) {
