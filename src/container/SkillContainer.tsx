@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Title } from '../component/common/PageTitle';
 import { RefObject } from 'react';
-import { SkillList } from '../component/skill/skillList';
+import Skill from '../component/skill/skillList';
+
 
 interface SkillContainerProps {
     mref: RefObject<HTMLDivElement>;
@@ -16,8 +17,7 @@ export default function SkillContainer({ mref }: SkillContainerProps) {
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
                 <Title title='Skills' />
-                    <SkillList/>
-
+                    {/* <Skill/> */}
             </PageTitleBox>
         </AboutMeContainersLayout>
     );
