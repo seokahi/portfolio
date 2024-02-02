@@ -1,0 +1,107 @@
+.bg-aws {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -10px -10px;
+}
+
+.bg-express {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -95px -10px;
+}
+
+.bg-figma {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -10px -95px;
+}
+
+.bg-firebase {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -95px -95px;
+}
+
+.bg-graphql {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -180px -10px;
+}
+
+.bg-next {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -180px -95px;
+}
+
+.bg-mui {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -10px -180px;
+}
+
+.bg-nginx {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -95px -180px;
+}
+
+.bg-node {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -180px -180px;
+}
+
+.bg-postman {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -265px -10px;
+}
+
+.bg-recoil {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -265px -95px;
+}
+
+.bg-query {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -265px -180px;
+}
+
+.bg-storybook {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -10px -265px;
+}
+
+.bg-react {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -95px -265px;
+}
+
+.bg-redux-toolkit {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -180px -265px;
+}
+
+.bg-webpack {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -265px -265px;
+}
+
+.bg-styled-component {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -350px -10px;
+}
+
+.bg-typeScript {
+  width: 65px;
+  height: 65px;
+  background: url('/skills_sprites.png') -350px -95px;
+}
