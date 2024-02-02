@@ -50,6 +50,7 @@ const AboutMeContainersLayout = styled.div`
     @media (max-width: 576px) {
         row-gap: 5rem;
     } */
+    
 `;
 
 const PageTitleBox = styled.div`
