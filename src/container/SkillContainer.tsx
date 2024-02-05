@@ -17,7 +17,7 @@ export default function SkillContainer({ mref }: SkillContainerProps) {
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
                 <Title title='Skills' />
-                    {/* <Skill/> */}
+                    <Skill/>
             </PageTitleBox>
         </AboutMeContainersLayout>
     );

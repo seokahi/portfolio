@@ -71,8 +71,8 @@ export const ProgressCircle = ({ value, name, open }: ProgressProps) => {
         <StyledProgress value={value} name={name} open={open}>
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#FFFEC4" />
-              <stop offset="50%" stop-color="#DFFFD8" />
+              <stop offset="0%" stop-color="#f7f6f1" />
+              <stop offset="50%" stop-color="#9c9c9c" />
               <stop offset="90%" stop-color="#95DAC1" />
             </linearGradient>
           </defs>
@@ -119,9 +119,9 @@ const StyledProgress = styled.svg<ProgressProps> `
     fill: transparent;
     stroke: url(#gradient);
     stroke-linecap: round;
-    stroke-dashoffset: ${({ name, value }) => name ? CIRCUMFERENCE * (1 - value / 100) : CIRCUMFERENCE};
+    /* stroke-dashoffset: ${({ name, value }) => name ? CIRCUMFERENCE * (1 - value / 100) : CIRCUMFERENCE};
     stroke-dasharray: ${CIRCUMFERENCE};
-    transition: 1.8s ease-in-out;
+    transition: 1.8s ease-in-out; */
   }
   .animate {
     stroke-dashoffset: ${({ value }) => CIRCUMFERENCE * (1 - value / 100)};
