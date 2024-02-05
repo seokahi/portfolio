@@ -5,7 +5,6 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import Style from './resource/style/style';
 import  homeSlice  from './reducer/homeSlice.tsx';
-import "./resource/style/skill.css"
 const store = configureStore({
   reducer: {
     home: homeSlice,
