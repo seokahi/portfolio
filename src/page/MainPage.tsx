@@ -21,9 +21,9 @@ export default function MainPage() {
             <main>
                 <Outlet />
             </main>
-            <footer>
+            {/* <footer>
                 <Footer/>
-            </footer>
+            </footer> */}
         </>
     );
 }
