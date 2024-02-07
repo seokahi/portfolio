@@ -47,6 +47,9 @@ font-family: "Rajdhani", sans-serif;
   body {
     margin: 0;
     width: 100vw;
+    background-color: rgb(27, 29, 32);
+    color:white;
+    border-top: 2px solid rgba(99, 99, 99, 0.349);
   }
 
   nav {
@@ -69,7 +72,9 @@ font-family: "Rajdhani", sans-serif;
   a {
     text-decoration: none;
   }
-
+  main {
+    margin:0;
+  }
   
 `;
 
