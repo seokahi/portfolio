@@ -1,84 +1,20 @@
-// import html from "../img/html-logo.png"
-
-// export const skillList = [
-//     {
-//         skill:'FrontEnd',
-//         img: [
-//             {img:html},
-//             {img:html},
-//             {img:html},
-//         ]
-//     },
-//     {
-//         skill:'BackEnd',
-//         img:[
-//             {img:html},
-//             {img:html},
-//             {img:html},
-//         ]
-//     },
-//     {
-//         skill:'BackEnd',
-//         img:[
-//             {img:html},
-//             {img:html},
-//             {img:html},
-//         ]
-//     },
-//     {
-//         skill:'Mobile App',
-//         img:[
-//             {img:html},
-//             {img:html},
-//             {img:html},
-//         ]
-//     },
-//     {
-//         skill:'Deployment',
-//         img:[
-//             {img:html},
-//             {img:html},
-//             {img:html},
-//         ]
-//     },
-//     {
-//         skill:'Community',
-//         img:[
-//             {img:html},
-//             {img:html},
-//             {img:html},
-//         ]
-//     },
-//     {
-//         skill:'Extra',
-//         img:[
-//             {img:html},
-
-//         ]
-//     },
-
-// ]
+import htmlImg from "../img/html.png"
+import cssImg from "../img/css.png"
 export const FRONTEND = [
     {
-      stack: 'frontend',
-      name: 'React',
-      value: 60,
-      className: 'bg-react_logo',
-      content: '재사용이 가능한 컴포넌트 단위로 개발하고, CSR을 경험해 봤어요.'
+      name: 'HTML5',
+      image:htmlImg,
+      content: '웹 접근성, 표준성을 준수하며 시멘틱태그를 이용해 마크업 할 수 있습니다.'
     },
     {
-      stack: 'frontend',
-      name: 'TypeScript',
-      value: 40,
-      className: 'bg-typescript_logo ',
-      content: 'JS를 정적 타입으로 개발하여 서비스의 안정성을 향상시켰어요.'
+      name: 'CSS3',
+      image:cssImg,
+      content: 'position '
     },
     {
-      stack: 'frontend',
-      name: 'Redux-toolkit',
-      value: 40,
-      className: 'bg-redux_logo ',
-      content: 'Redux-toolkit을 사용하여 전역으로 상태관리를 해봤어요.'
+      name: 'HTML5',
+      image:htmlImg,
+      content: '웹 접근성, 표준성을 준수하며 시멘틱태그를 이용해 마크업 할 수 있습니다.'
     },
     // {
     //   stack: 'frontend',
@@ -95,45 +31,35 @@ export const FRONTEND = [
     //   content: 'React-query 사용하여 캐싱된 데이터를 가져와봤어요.'
     // },
     {
-      stack: 'frontend',
-      name: 'Styled-component',
-      value: 60,
-      className: 'bg-styledComponents_logo',
-      content: 'Styled-component를 사용해봤어요.'
+      name: 'HTML5',
+      image:htmlImg,
+      content: '웹 접근성, 표준성을 준수하며 시멘틱태그를 이용해 마크업 할 수 있습니다.'
     },
     {
-      stack: 'frontend',
-      name: 'Scss',
-      value: 60,
-      className: 'bg-scss_logo ',
-      content: 'MUI를 사용하여 프로젝트를 만들어 봤어요.'
+      name: 'HTML5',
+      image:htmlImg,
+      content: '웹 접근성, 표준성을 준수하며 시멘틱태그를 이용해 마크업 할 수 있습니다.'
     },
   ]
   
   export const BACKEND = [
     {
-      stack: 'backend',
-      name: 'Node.js',
-      value: 10,
-      className: 'bg-nodejs_logo ',
-      content: 'Node.js로 서버를 구축해 봤어요.'
+      name: 'CSS',
+      image:cssImg,
+      content: '웹 접근성, 표준성을 준수하며 시멘틱태그를 이용해 마크업 할 수 있습니다.'
     },
     {
-      stack: 'backend',
-      name: 'Express',
-      value: 10,
-      className: 'bg-express_logo',
-      content: 'Express로 서버를 구축해 봤어요.'
+      name: 'CSS',
+      image:cssImg,
+      content: '웹 접근성, 표준성을 준수하며 시멘틱태그를 이용해 마크업 할 수 있습니다.'
     },
   ]
   
   export const ETC = [
     {
-      stack: 'etc',
-      name: 'Github',
-      value: 60,
-      className: 'bg-github_logo',
-      content: 'Figma로 프로젝트를 기획하고 프로토타입을 만들어 봤어요.'
+      name: 'CSS',
+      image:cssImg,
+      content: '웹 접근성, 표준성을 준수하며 시멘틱태그를 이용해 마크업 할 수 있습니다.'
     },
     // {
     //   stack: 'etc',
