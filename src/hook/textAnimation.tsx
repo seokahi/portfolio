@@ -42,10 +42,12 @@ const TextTypingAni = ({ text }: AnimationProps) => {
     );
 };
 
-const Title = styled.p`
+const Title = styled.h1`
         font-family: 'PartialSansKR-Regular';
         font-size:90px;
-        position: relative;
+        font-weight: 900;
+        text-align: center;
+        color: white;
         @media (max-width: 1075px) {
           font-size:75px;
         }
