@@ -1,20 +1,20 @@
-import styled from 'styled-components';
+import styled ,{ css }from 'styled-components';
 import { navBarList } from '../../resource/string/navbar';
 import { Link } from 'react-router-dom';
 import { setCurrent  } from '../../reducer/homeSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function NavItems() {
     const dispatch = useDispatch();
+    const current = useSelector((state:any) => state.home.current);
     const handleChildClick = (e:React.MouseEvent, title:string) => {
-        dispatch(setCurrent (title));
+        dispatch(setCurrent(title));
         console.log(e);
     };
     return (
         <Items>
             {navBarList.map((items, index) => (
-                items.title === 'Home' ? null : (
                     <ItemsWrapper>
                         <ItemWrapper 
                             key={index} 
@@ -26,13 +26,14 @@ export default function NavItems() {
                                     items.title
                                 )
                             }
+                            isActive={current === items.title}
                         >
                             <div>
                                 {items.title}
                             </div>
                         </ItemWrapper>
                     </ItemsWrapper>
-                )
+                
             ))}
         </Items>
     );
@@ -40,37 +41,29 @@ export default function NavItems() {
 
 const Items = styled.div`
     font-family: 'PartialSansKR-Regular';
-    /* width: 72%;
-    list-style: none;
     display: flex;
-    gap:20px;
-    margin:0; */
-    display: flex;
-    max-width: 500px;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
     align-items: center;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
+    gap: 0 16px;
 
 `;
 
 const ItemsWrapper = styled.div`
+    padding: 6px 10px;
+
 
 `;
 
-const ItemWrapper = styled(Link)`
-            font-family: 'PartialSansKR-Regular';
-    font-weight: 700;
-    font-size: 15px;
+const ItemWrapper = styled(Link)<{ isActive: boolean }>`
     color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    cursor: pointer;
-    &:hover {
-    color:#6e6657;
-  }
+    box-sizing: border-box;
+    div {
+        font-size:16px;
+        font-weight: 800;
+        ${props => props.isActive  && css`
+            border-bottom: 2px solid white;
+            padding-bottom: 4px;
+        `}
+    }
 `;
 
 
