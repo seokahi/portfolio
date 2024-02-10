@@ -1,38 +1,25 @@
 import styled from 'styled-components';
-import img from "../../resource/img/share-icon.png"
 interface titleTYpe{
     title:string;
 }
 export const Title = (title:titleTYpe) => {
     return (
-        <TitleTextWrapper>
+        <TitleWrapper>
                 <TitleText>{title.title}</TitleText>
-        </TitleTextWrapper>
+                </TitleWrapper>
     );
 };
 
-const TitleTextWrapper = styled.div`
-    display: table;
-    position: relative;
-    padding:0px 2rem;
-    font-family: 'GangwonEduPowerExtraBoldA';
-`;
-
-const TitleText = styled.div`
-    font-weight: 400;
-    font-size: 3rem;
-    line-height: 1.5;
+const TitleWrapper = styled.div`
+    font-family: 'GangwonEdu_OTFBoldA';
+    display: flex;
+    padding-top: 120px;
+    align-items: center;
+    justify-content: center;
 `
+const TitleText = styled.div`
 
-const TitleShareImg = styled.img`
-    position: absolute;
-    top: 50%;
-    left: -3rem;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    width: 2rem;
-    height: 2rem;
-    opacity: .5;
-    cursor: pointer;
+    font-size: 2.7rem;
+    font-weight: 900;
+    color: #918e8b;
 `
