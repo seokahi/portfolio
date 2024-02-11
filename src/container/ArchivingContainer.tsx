@@ -12,7 +12,7 @@ interface ArchivingContainerProps {
     return (
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
-                <Title title='Archiving' />
+                <Title title='ARCHIVING' />
                 <ArchivingLists>
                     {ArchivingList.map((info, index) => (
                         <ArchivingInfoList key={index} infos={info} />

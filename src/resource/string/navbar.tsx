@@ -1,19 +1,17 @@
 export const navBarList = [
     {
-        title:'Home',
+        title:'INTRO',
     },
     {
-        title:'About me',
-        content:"It's about me."
+        title:'ABOUT',
     },
     {
-        title:'Skills',
-        content:"It's about my skill."
+        title:'STACKS',
     },
     {
-        title:'Archiving',
+        title:'WORKS',
     },
     {
-        title:'Projects',
-    }
+        title:'CONTACT',
+    },
 ]

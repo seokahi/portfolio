@@ -31,19 +31,19 @@ export default function HomePage() {
             dispatch(setCurrent(""));
         }
         switch (current) {
-            case 'Home':
+            case 'INTRO':
                 window.scrollTo(0, 0);
                 break;
-            case 'About me':
+            case 'ABOUT':
                     scrollRef.current[0]?.current?.scrollIntoView({ behavior: 'smooth' });
                 break;
-            case 'Skills':
+            case 'STACKS':
                     scrollRef.current[1]?.current?.scrollIntoView({ behavior: 'smooth' });
                 break;
-            case 'Archiving':
+            case 'WORKS':
                     scrollRef.current[2]?.current?.scrollIntoView({ behavior: 'smooth' });
                 break;
-            case 'Projects':
+            case 'CONTACT':
                     scrollRef.current[3]?.current?.scrollIntoView({ behavior: 'smooth' });
                 break;
             default:
@@ -57,19 +57,13 @@ export default function HomePage() {
         <HomePageWrapper>
             <AboutMe mref={scrollRef.current[0]} />
             <SkillContainer mref={scrollRef.current[1]} />
-            <ArchivingContainer mref={scrollRef.current[2]} />
-            <ProjectContainer mref={scrollRef.current[3]} />
+            <ProjectContainer mref={scrollRef.current[2]} />
+            <ArchivingContainer mref={scrollRef.current[3]} />
         </HomePageWrapper>
     );
 }
 
 const HomePageWrapper = styled.div`
-    display: grid;
-    row-gap: 8rem;
-    grid-template-columns: 100%;
-    padding: 0 2rem;
-
-    @media (max-width: 350px) {
-        padding: 0 1rem;
-    }
+    width: 100vw;
+    height: 100vh;
 `;

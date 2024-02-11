@@ -1,21 +1,29 @@
 import styled from 'styled-components';
 import { AboutMeList } from '../component/aboutme/AboutmeInfo';
-import { infoList } from '../resource/string/info';
+import { infoList } from '../resource/string/skill';
 import { Title } from '../component/common/PageTitle';
-import  { RefObject } from 'react';
+import  { RefObject, useState } from 'react';
+import { Button } from '../component/common/Scroll';
+import { useDispatch } from 'react-redux';
 // import { DetailList } from '../resource/string/detail';
 // import { AboutMeDetailList } from '../component/aboutme/AboutmeDetail';
 
+import { setCurrent } from '../reducer/homeSlice';
 interface AboutMeContainerProps {
     mref: RefObject<HTMLDivElement>;
   }
   
   export default function AboutMe({ mref }: AboutMeContainerProps) {
+    const dispatch = useDispatch();
+    const [buttonClicked, setButtonClicked] = useState(false);
+
+    const handleChildClick = () => {
+        dispatch(setCurrent("STACKS"));
+        setButtonClicked(true);
+    }; 
     return (
         <AboutMeContainersLayout ref={mref}>
-            <PageTitleBox>
-                <Title title='About Me' />
-            </PageTitleBox>
+                <Title title='ABOUT' />
                 <AboutBox>
 
                     {/* <AboutMeInfos>
@@ -30,11 +38,12 @@ interface AboutMeContainerProps {
                             일상에서 마주한 불편함으로, <br /> 더 나은 <span className='underline'><span className='strong'>사용자 경험</span>에 대해 고민</span>합니다. </li>
                         </ul>
 
-                    <AboutMeLists>
+                    {/* <AboutMeLists>
                         {infoList.map((info, index) => (
                             <AboutMeList key={index} infos={info} />
                         ))}
-                    </AboutMeLists>
+                    </AboutMeLists> */}
+                    {/* <Button onClick={handleChildClick}></Button> */}
                 </AboutBox>
         </AboutMeContainersLayout>
     );
@@ -88,10 +97,14 @@ const AboutMeLists = styled.div`
 `;
 
 const AboutMeContainersLayout = styled.div`
+background-color: rgb(27, 29, 32);
+height: 100%;
+color:white;
+
     /* display: flex; */
     /* grid-template-columns: 1fr;
     row-gap: 15rem; */
-    min-height: calc(100vh - 84px);
+    /* min-height: calc(100vh - 84px);
   width: fit-content;
   margin: auto;
 
@@ -99,7 +112,7 @@ const AboutMeContainersLayout = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
+background-color: black;
 
   .about-box {
     display: flex;
@@ -155,7 +168,7 @@ ul {
     display: flex;
     justify-content: center;
     flex-direction: column;
-  }
+  } */
 
 
     /* @media (max-width: 1800px) {
@@ -170,18 +183,4 @@ ul {
     @media (max-width: 576px) {
         row-gap: 5rem;
     } */
-`;
-
-
-const PageTitleBox = styled.div`
-    font-family: 'GangwonEdu_OTFBoldA';
-    display: flex;
-    padding-top: 150px;
-    @media (max-width: 1800px) {
-        flex-direction: column;
-        padding-top: 100px;
-    }
-    @media (max-width: 576px) {
-        padding-top: 180px;
-    }
 `;

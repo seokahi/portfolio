@@ -11,7 +11,7 @@ interface ProjectontainerProps {
     return (
         <AboutMeContainersLayout ref={mref}>
             <PageTitleBox>
-                <Title title='Projects' />
+                <Title title='WORKS' />
                 <AboutMeLists>
                    <ProjectInfo/> 
                 </AboutMeLists>
@@ -50,7 +50,7 @@ const AboutMeContainersLayout = styled.div`
     @media (max-width: 576px) {
         row-gap: 5rem;
     } */
-    
+    border-top: 2px solid rgba(99, 99, 99, 0.349);
 `;
 
 const PageTitleBox = styled.div`
