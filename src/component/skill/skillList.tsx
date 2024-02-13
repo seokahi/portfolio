@@ -1,238 +1,144 @@
 import styled from "styled-components";
-import { FRONTEND,BACKEND,ETC } from "../../resource/string/image";
-import { useEffect, useState } from "react";
-import { ProgressCircle } from "./skillListDetail";
-
+import { FRONTEND, BACKEND, ETC } from "../../resource/string/image";
 
 export type SkillInfo = {
-  stack: string;
-  name: string;
-  value: number;
-  className: string;
-  content: string;
+  name: string,
+  image: string,
+  content: string
 };
-export interface ProgressCircleProps {
-  openModal: boolean;
-  openStack: {
-    frontend: boolean;
-    backend: boolean;
-    etc: boolean;
-  };
-}
 
-export interface CircleAnimationProps {
-  translation?: number;
-  rotation: number;
-  rotate?: number;
-  isRotate: boolean;
-}
-
-export interface OpenModalDataProps {
-  stack: string;
-  name: string;
-  content: string;
-}
-
-
-type SkillSet = [string,SkillInfo[]];
-
+type SkillSet = [string, SkillInfo[]];
 const Skill = () => {
-  const skills: SkillSet[] = [["frontend",FRONTEND],["backend",BACKEND],["etc",ETC]];
-  const [lastOpenStack, setLastOpenStack] = useState('frontend');
-
-  useEffect(() => {
-      handleOpenStack(lastOpenStack);
-
-    return () => {
-      setOpenStack({
-        frontend: false,
-        backend: false,
-        etc: false,
-      });
-    };
-  }, []);
-  const [openStack, setOpenStack] = useState( {
-    frontend:false,
-    backend:false,
-    etc:false
-  })
-
-  const [modalData, setModalData] = useState({
-    stack: '',
-    name: '',
-    content: '',
-  });
-
-  const [openModal, setOPenModal] = useState(false);
-  const handleModal = (isOpen: boolean, skills?: OpenModalDataProps, stack?: string) => {
-    if (isOpen && skills && stack) {
-      setModalData({ stack, name: skills.name, content: skills.content });
-    }
-    setOPenModal(isOpen);
-  }
-  const handleOpenStack = (stackType: string) => {
-    setOpenStack(prevState => ({
-      frontend: stackType === 'frontend' ? !prevState.frontend : false,
-      backend: stackType === 'backend' ? !prevState.backend : false,
-      etc: stackType === 'etc' ? !prevState.etc : false,
-    }));
-    setLastOpenStack(stackType); // 이전에 선택한 스택을 기억하여 요소 관측시 오픈하기 위한 sate
-  };
-
+  const skills: SkillSet[] = [["frontend", FRONTEND], ["backend", BACKEND], ["etc", ETC]];
   return (
-    <SkillBox id='skill' >
-      <div className='skill-container' id='skill-container'>
-        <ProgressCircleBox openStack={openStack} openModal={openModal}>
-          {skills.map((stack, index1) => (
-            <div key={index1} className={`${stack[0]}`}>
-              {stack[1].map((skill, index2) => (
-                <div key={skill.name}>
-                  <CircleAnimation rotation={360 / stack[1].length * index2}
-                    isRotate={stack[0] === 'frontend' ? openStack.frontend : stack[0] === 'backend' ? openStack.backend : openStack.etc}
-                  >
-                    <ProgressCircle value={skill.value} open={stack[0] === 'frontend' ? openStack.frontend : stack[0] === 'backend' ? openStack.backend : openStack.etc} />
-                    <div
-                      className={`${skill.className} skills`}
-                      onMouseEnter={() => handleModal(true, skill, stack[0])}
-                      onMouseLeave={() => handleModal(false)} />
-                  </CircleAnimation>
-                </div>
+    <>
+      {skills.map((stack, index)=> (
+        <StackWrapper key={index} className={`${stack[0]}`}>
+            {stack[0] === "frontend" ? <div className="subTitle"><span>#FRONT-END SKILL</span></div>:
+            stack[0] === "backend"? <div className="subTitle"><span>#BACK-END SKILL</span></div>:
+            <div className="subTitle"><span>#USING-TOOL</span></div>
+            }
+            <StackContainer>
+              <ul>
+              {stack[1].map((skill, index1) => (
+                <li key={index1}> {/* key 프로퍼티 추가 */}
+                  <img src={skill.image} alt={skill.name} /> {/* 이미지에 대한 alt 속성 추가 */}
+                  <div>
+                    <p>{skill.name}</p>
+                    <p>{skill.content}</p>
+                  </div>
+                </li>
               ))}
-              <div onClick={() => handleOpenStack(stack[0])} className='stack-circle'>
-                <ProgressCircle name={stack[0]} value={100} open={false} />
-              </div>
-              {modalData.stack === stack[0] && (
-                <Card className='modal'>
-                  <div className='modal-name'>{modalData.name}</div>
-                  <div className='modal-content'>{modalData.content}</div>
-                </Card>
-              )}
-            </div>
-          ))}
-        </ProgressCircleBox>
 
-
-      </div>
-    </SkillBox>
+              </ul>
+            </StackContainer>
+        </StackWrapper>
+    ))} 
+    </>
   )
 }
 
-
-const SkillBox = styled.div`
-  
-`
-
-const ProgressCircleBox = styled.div<ProgressCircleProps>`
-  position: relative;
-  margin: auto;
-
-  width: 70vw;
-  height: 86vh;
-  transition: 1.2s;
-
-  font-family: 'SUIT-Regular';
-  
-  .frontend {
-    position: absolute;
-    left: ${({ openStack }) => (openStack.frontend ? '40vw' : '0vw')};
-    top: ${({ openStack }) => (openStack.frontend ? '37vh' : '16vh')};
-
+const StackWrapper = styled.div`
+  .subTitle {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-
-    transition: 1.2s;
+    margin-top: 80px;
+    margin-bottom: 15px;
   }
-  .backend {
-    position: absolute;
-    left: ${({ openStack }) => (openStack.backend ? '40vw' : '0vw')};
-    top: ${({ openStack }) => (openStack.backend ? '37vh' : '37vh')};
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 1.2s;
-  }
-  .etc {
-    position: absolute;
-    left: ${({ openStack }) => (openStack.etc ? '40vw' : '0vw')};
-    top: ${({ openStack }) => (openStack.etc ? '37vh' : '58vh')};
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 1.2s;
-    position: absolute;
-  }
-  .stack-circle {
-    background-color: white;
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    z-index: 10;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-  .modal {
-    display: ${({ openModal }) => (openModal ? '' : 'none')};
-    position: absolute;
-    width: 200px;
-    height: 150px;
-
-    left: 50%;
-    top: 50%;
-    transform: translate(-17%, -10%);
-
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
-
-    z-index: 10;
-  }
-  .modal-name {
-    width: fit-content;
-    background-color: #eaeaeaaf;
-    border-radius: 12px;
-    margin: 0 1rem;
-    padding: 0.2rem 0.5rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-  .modal-content {
-    margin: 1rem 1.5rem;
-    word-break: keep-all;
-    line-height: 1.3rem;
-    font-size: 0.9rem;
-  }
-  .skills {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    cursor: pointer;
+  .subTitle span {
+    position: relative;
+    padding: 6px 25px;
+    margin-left: 30px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    border: 1px solid rgb(50, 50, 60);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    transform: scale(1.3);
+    transition: 700ms ease;
+    color:white;
   }
 `
 
-const CircleAnimation = styled.div<CircleAnimationProps>`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transition: 1.2s;
-  transform: 
-  ${({ isRotate, rotation }) => isRotate
-    ? ` rotate(${rotation}deg) translate(200px) rotate(-${rotation}deg)`
-    : `rotate(0deg) translate(0px) `};
-`
+const StackContainer =styled.div`
 
-const Card = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 130px;
+    padding: 0 30px;
 
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 35px;
+    }
+
+    ul li {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 90px;
+      height: 90px;
+      background-color: #000000;
+      border-radius: 0px;
+      border: 1px solid rgb(30, 30, 35);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      transition: 300ms ease;
+
+
+    }
+
+    ul li img {
+      width: 50px;
+    }
+
+    ul li div {
+      position: absolute;
+      width: 180px;
+      left: calc(100% + 5px); /* 변경된 부분 */
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      opacity: 0;
+      color: white;
+      transition: left 250ms ease, opacity 400ms ease;
+      cursor: pointer;
+    }
+
+    ul li div p:first-child {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    ul li div p:last-child {
+      font-weight: 300;
+      font-size: 0.8rem;
+      padding-right: 15px;
+      margin:0;
+    }
+
+    ul li:hover div {
+      left: calc(100% - 180px); /* 변경된 부분 */
+      opacity: 1;
+    }
+
+    ul li:hover {
+      padding-right: 180px;
+      height: 120px;
+    }
 `
+
+
 
 export default Skill;
