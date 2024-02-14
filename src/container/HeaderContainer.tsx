@@ -26,10 +26,6 @@ export default function HeaderContainer() {
                 
          <Navbar />       
     </>
-        // <div>
-        //     <Info/>
-        //     <Navbar />
-        // </div>
     );
 }
 
