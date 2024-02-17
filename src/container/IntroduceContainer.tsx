@@ -8,9 +8,7 @@ export default function MyIntroduce() {
     return (
         <>
             <IntroduceContainer>
-                <ContentsWrapper>
                     <IntroduceText/>
-                </ContentsWrapper>
             </IntroduceContainer>
         </>
     );
@@ -19,17 +17,28 @@ export default function MyIntroduce() {
 
 
 const IntroduceContainer = styled.div`
+    position:relative;
     width: 100%;
 
     height: 100vh;
     box-sizing: border-box;
-    padding-top: 7rem;
-    border-bottom-left-radius: 50vh;
-    background: linear-gradient(90deg, #6F84E2 0%, #7BABE5 100%);
+    padding-top: 70px;
+    background: linear-gradient(-45deg, #040A26, #918e8b, #040A26);
+    background-size: 400% 400%;
+    animation: colorChange 7s ease infinite;
 
 
-
-
+    @keyframes colorChange{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
 
     @media (max-width: 768px) {
         border-bottom-left-radius: 20vw;
@@ -43,20 +52,20 @@ const IntroduceContainer = styled.div`
     
 `;
 
-const ContentsWrapper = styled.div`
-    width: 750px;
-    margin: 3rem auto;
-    display: flex;
-    justify-content: space-between;
-    @media (min-height: 700px) {
-        margin-top: calc(
-            40vh - ${7 * 0.4}rem - ${520 * 0.4}px
-        ); // header 부분 제외한 화면 크기의 위에서 40% 위치
-    }
-    @media (max-width: 768px) {
-        width: unset;
-    }
-    @media (max-width: 576px) {
-        margin: 1rem auto;
-    }
-`;
+// const ContentsWrapper = styled.div`
+//     width: 750px;
+//     margin: 3rem auto;
+//     display: flex;
+//     justify-content: space-between;
+//     @media (min-height: 700px) {
+//         margin-top: calc(
+//             40vh - ${7 * 0.4}rem - ${520 * 0.4}px
+//         ); // header 부분 제외한 화면 크기의 위에서 40% 위치
+//     }
+//     @media (max-width: 768px) {
+//         width: unset;
+//     }
+//     @media (max-width: 576px) {
+//         margin: 1rem auto;
+//     }
+// `;
