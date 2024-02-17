@@ -1,33 +1,42 @@
-export const ProjectList = [
-    {
-        name:'포트폴리오',
-        content: '프론트엔드 취업을 위한 포트폴리오 프로젝트',
-        stack:'React,Typescript,Styled-componet,Redux'
-    },
-    {
-        name:'포트폴리오2',
-        content: '프론트엔드 취업을 위한 포트폴리오 프로젝트',
-        stack:'React,Typescript,Styled-componet,Redux'
-    },
-    {
-        name:'포트폴리오3',
-        content: '프론트엔드 취업을 위한 포트폴리오 프로젝트',
-        stack:'React,Typescript,Styled-componet,Redux'
-    },
-    {
-        name:'포트폴리오4',
-        content: '프론트엔드 취업을 위한 포트폴리오 프로젝트',
-        stack:'React,Typescript,Styled-componet,Redux'
-    },
-    {
-        name:'포트폴리오5',
-        content: '프론트엔드 취업을 위한 포트폴리오 프로젝트',
-        stack:'React,Typescript,Styled-componet,Redux'
-    },
-    {
-        name:'포트폴리오6',
-        content: '프론트엔드 취업을 위한 포트폴리오 프로젝트',
-        stack:'React,Typescript,Styled-componet,Redux'
-    },
 
-]
+export const Portfolio = {
+    projectImg: [
+        "https://user-images.githubusercontent.com/76831344/182029520-bc2d63b1-bbe6-402a-bfab-29fadb69ed65.gif",
+        "https://user-images.githubusercontent.com/76831344/182029555-a76980b9-d70b-42d4-97eb-073a54c98f8c.gif",
+        "https://user-images.githubusercontent.com/76831344/182029631-805261fe-ed01-435a-bddb-827f14364a2d.gif"
+    ],
+    projectTitle: "PORTFOLIO",
+    projectInfo: "개인프로젝트",
+    projectDetail: "React+Typescript를 이용해 만든 포트폴리오입니다. 편리하고 효율적인 정보 탐색을 제공하기 위해 클릭을 이용한 스크롤 이동을 주요 기능으로 개발하였습니다.",
+    projectTag: ["#REACT", "#TYPESCRIPT","#REDUX","#STYLED-COMPONENT"],
+    projectLink: "https://hologram-pi.vercel.app/",
+    projectGithub: "https://github.com/likeLion-FrontEnd-project/Hologram"
+}
+export const Hologram = {
+    projectImg: [
+        "https://user-images.githubusercontent.com/76831344/182029520-bc2d63b1-bbe6-402a-bfab-29fadb69ed65.gif",
+        "https://user-images.githubusercontent.com/76831344/182029555-a76980b9-d70b-42d4-97eb-073a54c98f8c.gif",
+        "https://user-images.githubusercontent.com/76831344/182029631-805261fe-ed01-435a-bddb-827f14364a2d.gif"
+    ],
+    projectTitle: "Hologram",
+    projectInfo: "팀프로젝트",
+    projectDetail: "Hologram은 혼자 사는 사람들의 일상 공유, 자신만의 팁, 고민거리 찬반투표 등 다양한 커뮤니티 활동을 할 수 있는 SNS입니다. fetch API + Vanilla JS를 이용해 구현하였습니다.",
+    projectTag: ["#fetch", "#vanilaJS"],
+    projectLink: "https://hologram-pi.vercel.app/",
+    projectGithub: "https://github.com/likeLion-FrontEnd-project/Hologram"
+};
+
+export const INTIP = {
+    projectImg: [
+        "https://user-images.githubusercontent.com/76831344/182029520-bc2d63b1-bbe6-402a-bfab-29fadb69ed65.gif",
+        "https://user-images.githubusercontent.com/76831344/182029555-a76980b9-d70b-42d4-97eb-073a54c98f8c.gif",
+        "https://user-images.githubusercontent.com/76831344/182029631-805261fe-ed01-435a-bddb-827f14364a2d.gif"
+    ],
+    projectTitle: "INTIP",
+    projectInfo: "팀프로젝트",
+    projectDetail: "INTIP은 인천대학교 학생들을 위한 다양한 팁을 제공해주는 웹 사이트입니다.React+TypeScript+Redux+Fetch+Styled-Component를 이용해 만든 프로젝트입니다",
+    projectTag: ["#REACT", "#TYPESCRIPT","#REDUX","#FETCH API","#STYLED-COMPONENT"],
+    projectLink: "https://inu-portal-web.pages.dev/",
+    projectGithub: "https://github.com/inu-appcenter/inu-portal-web"
+}
+
