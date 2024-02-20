@@ -1,45 +1,69 @@
+ import styled from '@emotion/styled';
+import { memo } from 'react';
+import { Carousel } from './Carousel';
+import { Content } from './Content';
 
-import styled from "styled-components";
-import { ProjectDetailList } from "../../resource/string/projectDetail";
-
-const Modal = ({ onClickToggleModal, isOpenModal, index }: { onClickToggleModal: () => void; isOpenModal: boolean; index: number }) => {
-  // 선택된 프로젝트 디테일 가져오기
-  const projectDetail = ProjectDetailList[index];
-  
-  return (
-    <ModalContainer isOpen={isOpenModal}>
-      {isOpenModal && (
-        <ModalContent>
-          <button onClick={onClickToggleModal}>Close Modal</button>
-          {/* 선택된 프로젝트 디테일 보여주기 */}
-          <div>{projectDetail.title}</div>
-          <div>{projectDetail.content}</div>
-          <div>{projectDetail.link}</div>
-        </ModalContent>
-      )}
-    </ModalContainer>
-  );
+export type ProjectNav = {
+  projectImg: string;
+  projectTitle: string;
+  projectInfo: string;
+  projectDetail: string;
+  projectTag: string[];
 };
 
-const ModalContainer = styled.div<{ isOpen: boolean }>`
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-`;
+export interface ProjectList {
+  nav: ProjectNav;
+  projectImg: string[];
+  projectTitle: string;
+  projectInfo: string;
+  projectDetail: string;
+  projectTag: string[];
+  projectLink: string;
+  projectGithub: string;
+}
 
+interface Props {
+  project: ProjectList;
+  className: string;
+  handleDetailClose: () => void;
+};
 
-const ModalContent = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-`;
+export const Detail = memo(({ project, className, handleDetailClose }: Props) => {
+  // const { handleMove } = useMoveToSection();
 
+  return (
+    <DetailBox id='detail' className={className} >
+      <div className='content'>
+        <Carousel project={project} />
+        <Content project={project} />
+      </div>
+      {/* <Button onClick={() => {
+        handleMove('project');
+        handleDetailClose();
+      }} /> */}
+    </DetailBox>
+  );
+});
 
-export default Modal;
+const DetailBox = styled.section`
+  padding-top: 84px;
+  width: 99vw;
+  height: calc(100vh - 84px);
+  /* 🤔 ux 고민중으로 주석처리 합니다 */
+  /* height: ${({ className }) => (className === 'open' ? 'calc(100vh - 84px)' : '0px')}; */
+  /* visibility: ${({ className }) => (className === 'open' ? 'visible' : 'hidden')}; */
+  /* transition: height 0.5s ease-in; */
+
+  font-family: 'SUIT-Regular';
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`
