@@ -8,9 +8,9 @@ interface InfoType {
 }
 
 interface AboutMeListProps {
-  infos: InfoType; // props 이름을 infos로 변경
+  infos: InfoType; 
 }
- 
+
 export const AboutMeList: React.FC<AboutMeListProps> = ({ infos }) => {
     return (
       <TitleTextWrapper>

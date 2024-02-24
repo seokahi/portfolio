@@ -28,7 +28,7 @@ interface Props {
   handleDetailClose: () => void;
 };
 
-export const Detail = memo(({ project, className, handleDetailClose }: Props) => {
+export const Detail = memo(({ project, className }: Props) => {
   // const { handleMove } = useMoveToSection();
 
   return (

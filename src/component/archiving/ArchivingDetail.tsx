@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 interface InfoType {
-  img: string; // 이미지 경로를 문자열로 지정
+  img: string; 
   archiving: string;
   link: string;
   title: string;

@@ -36,8 +36,6 @@ const NavWrapper = styled.div`
     color: white;
     font-weight: 500;
     z-index: 9999;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 1px rgba(255, 255, 255, 0.3);
-  color: rgba(0, 0, 0, 1);
 `;
 
 const NavLogo = styled(Link)`
