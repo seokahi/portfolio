@@ -1,26 +1,26 @@
 import styled from 'styled-components';
-import { AboutMeList } from '../component/aboutme/AboutmeInfo';
-import { infoList } from '../resource/string/skill';
+// import { AboutMeList } from '../component/aboutme/AboutmeInfo';
+// import { infoList } from '../resource/string/skill';
 import { Title } from '../component/common/PageTitle';
 import  { RefObject, useState } from 'react';
-import { Button } from '../component/common/Scroll';
+// import { Button } from '../component/common/Scroll';
 import { useDispatch } from 'react-redux';
 // import { DetailList } from '../resource/string/detail';
 // import { AboutMeDetailList } from '../component/aboutme/AboutmeDetail';
 
-import { setCurrent } from '../reducer/homeSlice';
+// import { setCurrent } from '../reducer/homeSlice';
 interface AboutMeContainerProps {
     mref: RefObject<HTMLDivElement>;
   }
   
   export default function AboutMe({ mref }: AboutMeContainerProps) {
-    const dispatch = useDispatch();
-    const [buttonClicked, setButtonClicked] = useState(false);
+    // const dispatch = useDispatch();
+    // const [buttonClicked, setButtonClicked] = useState(false);
 
-    const handleChildClick = () => {
-        dispatch(setCurrent("STACKS"));
-        setButtonClicked(true);
-    }; 
+    // const handleChildClick = () => {
+    //     dispatch(setCurrent("STACKS"));
+    //     setButtonClicked(true);
+    // }; 
     return (
         <AboutMeContainersLayout ref={mref}>
                 <Title title='ABOUT' />
@@ -80,21 +80,21 @@ const AboutBox = styled.div`
 // `;
 
 
-const AboutMeLists = styled.div`
-    /* -webkit-box-sizing: border-box;
-    max-width: 59rem;
-    padding: 4rem 2rem;
-    margin: 0 auto;
-    display: flex;
-    display: -ms-flexbox;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    -webkit-box-pack: justify;
-    /* flex: 1 1 40%; */
-   /* flex-direction:column;
-    margin-bottom: 3rem; */
+// const AboutMeLists = styled.div`
+//     /* -webkit-box-sizing: border-box;
+//     max-width: 59rem;
+//     padding: 4rem 2rem;
+//     margin: 0 auto;
+//     display: flex;
+//     display: -ms-flexbox;
+//     flex-flow: row wrap;
+//     justify-content: space-between;
+//     -webkit-box-pack: justify;
+//     /* flex: 1 1 40%; */
+//    /* flex-direction:column;
+//     margin-bottom: 3rem; */
 
-`;
+// `;
 
 const AboutMeContainersLayout = styled.div`
 background-color: rgb(27, 29, 32);
