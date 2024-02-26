@@ -32,6 +32,8 @@ interface Props {
 export const Content = ({ project }: Props) => {
   return (
     <ContentBox>
+        <div className="intro">{project.projectDetail}</div>
+        <div className="content">{project.projectTag}</div>
       {/* <div className='intro'>
         {project.intro.map(({ title, content }, idx) => (
           <div key={idx}>
