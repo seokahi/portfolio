@@ -50,5 +50,5 @@ const TextWrapper = styled(motion.div)`
     width: 100%;
     top: 37vh;
     z-index: 1000;
-`
+`;
 

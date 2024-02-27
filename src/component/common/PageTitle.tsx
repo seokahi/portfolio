@@ -16,10 +16,10 @@ const TitleWrapper = styled.div`
     padding-top: 120px;
     align-items: center;
     justify-content: center;
-`
+`;
 const TitleText = styled.div`
 
     font-size: 2.7rem;
     font-weight: 900;
     color: #918e8b;
-`
+`;

@@ -63,7 +63,7 @@ const StackWrapper = styled.div`
     color:white;
   }
 `
-
+;
 const StackContainer =styled.div`
 
   display: flex;
@@ -137,7 +137,7 @@ const StackContainer =styled.div`
       padding-right: 180px;
       height: 120px;
     }
-`
+`;
 
 
 

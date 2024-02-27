@@ -66,4 +66,4 @@ const DetailBox = styled.section`
     justify-content: center;
     align-items: center;
   }
-`
+`;

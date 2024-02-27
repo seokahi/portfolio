@@ -54,7 +54,7 @@ const AboutBox = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-`
+`;
 
 // const AboutMeInfos = styled.div`
 //     /* -webkit-box-sizing: border-box;

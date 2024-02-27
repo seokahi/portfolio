@@ -55,6 +55,6 @@ const Title = styled.h1`
         @media (max-width: 576px) {
           font-size:30px;
         }
-`
+`;
 
 export default TextTypingAni;

@@ -122,4 +122,4 @@ const CarouselImg = styled(MuiCarousel)`
     display: flex;
     justify-content: center;
   }
-`
+`;

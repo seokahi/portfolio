@@ -22,7 +22,7 @@ const Header= styled.div`
     z-index: 9999;
 
 
-`
+`;
 
 const NavWrapper = styled.div`
     position: relative;

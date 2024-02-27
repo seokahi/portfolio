@@ -35,4 +35,4 @@ const TitleTextWrapper = styled.div`
 
 const TitleText = styled.div`
 
-`
+`;

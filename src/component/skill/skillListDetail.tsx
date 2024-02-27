@@ -106,7 +106,7 @@ const ProgressBox = styled.div`
     line-height: 120px;
     transform: rotate(90deg);
 }
-`
+`;
 
 const StyledProgress = styled.svg<ProgressProps> `
   width: 120px;
@@ -126,4 +126,4 @@ const StyledProgress = styled.svg<ProgressProps> `
   .animate {
     stroke-dashoffset: ${({ value }) => CIRCUMFERENCE * (1 - value / 100)};
   }
-`
+`;

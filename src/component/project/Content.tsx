@@ -95,5 +95,5 @@ const ContentBox = styled.div`
     background-size: 100% 50%;
     background-repeat: no-repeat;
   }
-`
+`;
 

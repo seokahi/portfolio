@@ -43,7 +43,7 @@ const TitleText = styled.div`
   margin-bottom: .5rem;
   font-weight: 700;
   font-size: 1.25rem;
-`
+`;
 
 const TitleShareImg = styled.img`
   width: 2rem;
@@ -51,7 +51,7 @@ const TitleShareImg = styled.img`
   height: 2rem;
   margin-top: .2rem;
   margin-right: 2rem;
-`
+`;
 
 // const ArchivingLists = styled.div`
 //   -webkit-box-sizing: border-box;
