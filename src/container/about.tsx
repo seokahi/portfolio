@@ -2,9 +2,9 @@ import styled from 'styled-components';
 // import { AboutMeList } from '../component/aboutme/AboutmeInfo';
 // import { infoList } from '../resource/string/skill';
 import { Title } from '../component/common/PageTitle';
-import  { RefObject, useState } from 'react';
+import  { RefObject } from 'react';
 // import { Button } from '../component/common/Scroll';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import { DetailList } from '../resource/string/detail';
 // import { AboutMeDetailList } from '../component/aboutme/AboutmeDetail';
 
