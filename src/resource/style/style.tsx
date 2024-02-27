@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const Style = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
 
 @font-face {
     font-family: 'PartialSansKR-Regular';
