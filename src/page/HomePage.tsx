@@ -10,6 +10,7 @@ import { setCurrent } from '../reducer/homeSlice';
 
 
 import AboutMe from '../container/about';
+import MyIntroduce from '../container/IntroduceContainer';
 export default function HomePage() {
     const location = useLocation();
     const scrollRef = useRef<Array<React.RefObject<HTMLDivElement>>>([
@@ -55,6 +56,7 @@ export default function HomePage() {
 
     return (
         <HomePageWrapper>
+            <MyIntroduce/>
             <AboutMe mref={scrollRef.current[0]} />
             <SkillContainer mref={scrollRef.current[1]} />
             <ProjectContainer mref={scrollRef.current[2]} />
@@ -64,6 +66,6 @@ export default function HomePage() {
 }
 
 const HomePageWrapper = styled.div`
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
 `;
