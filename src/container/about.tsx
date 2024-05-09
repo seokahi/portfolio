@@ -1,61 +1,189 @@
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 // import { AboutMeList } from '../component/aboutme/AboutmeInfo';
 // import { infoList } from '../resource/string/skill';
 import { Title } from '../component/common/PageTitle';
-import  { RefObject } from 'react';
+import  { MutableRefObject, RefObject, useEffect, useState } from 'react';
 // import { Button } from '../component/common/Scroll';
 // import { useDispatch } from 'react-redux';
 // import { DetailList } from '../resource/string/detail';
 // import { AboutMeDetailList } from '../component/aboutme/AboutmeDetail';
 
 // import { setCurrent } from '../reducer/homeSlice';
+import MyImg from "../../src/resource/img/ny-img.png";
+import  Detail  from '../component/aboutme/Detail';
+import Button from '../component/aboutme/Button';
+import Modal from '../component/aboutme/Modal';
+import {useScrollAnimation} from '../hook/useScrollAnimation';
+
 interface AboutMeContainerProps {
     mref: RefObject<HTMLDivElement>;
   }
   
   export default function AboutMe({ mref }: AboutMeContainerProps) {
-    // const dispatch = useDispatch();
-    // const [buttonClicked, setButtonClicked] = useState(false);
 
-    // const handleChildClick = () => {
-    //     dispatch(setCurrent("STACKS"));
-    //     setButtonClicked(true);
+    const [isModal,setIsModal] = useState(false);
     // }; 
+    const options = {
+      rootMargin: '-30% 0px',
+  };
+  const { ref, isInViewport } = useScrollAnimation(options);
+  
+  useEffect(()=> {
+      console.log(isModal);
+    },[isModal])
+
+    const handleOpenModal = () => {
+      console.log("gght")
+      setIsModal(true);
+    }
+
+    const handleCloseModal = () => {
+      console.log("gght")
+      setIsModal(false);
+  }
+
     return (
-        <AboutMeContainersLayout ref={mref}>
-                <Title title='ABOUT' />
-                <AboutBox>
+      <AboutMeContainersLayout  ref={mref} >
+        <Title   title={"ABOUT"}/>
+          <Container ref={ref} className={isInViewport ? "frame-in" : ""}>
+            <div className='img'>intro
+            </div>
+          <p>안녕하세요. 열정적이고 도전적인 신입 프론트엔드 개발자 서가희입니다.</p>
+          <p>문제를 통해 기회를 찾고  해결을 통해 성취감을 얻는 것을 좋아합니다.</p>
+          <p>사용자 입장에서 일상에서 마주한 불편함을 해결하기 위해 고민합니다.</p>
+          <p>신입으로서 도전을 무서워하지 않고 배우는 자세를 가지며 팀에 기여할 준비가 되어있습니다!</p>
+          </Container>
+      </AboutMeContainersLayout>
 
-                    {/* <AboutMeInfos>
-                        {DetailList.map((info, index) => (
-                            <AboutMeDetailList key={index} infos={info} />
-                        ))}
-                    </AboutMeInfos> */}
-                     <ul >
-                        <li>
-                            <span className='underline'><span className='strong'>문제</span>에서 기회를 포착</span>하고, <br /><span className='strong'>해결</span>을 통한 <span className='strong'>성취감</span>을 좋아합니다.</li>
-                        <li>
-                            일상에서 마주한 불편함으로, <br /> 더 나은 <span className='underline'><span className='strong'>사용자 경험</span>에 대해 고민</span>합니다. </li>
-                        </ul>
-
-                    {/* <AboutMeLists>
-                        {infoList.map((info, index) => (
-                            <AboutMeList key={index} infos={info} />
-                        ))}
-                    </AboutMeLists> */}
-                    {/* <Button onClick={handleChildClick}></Button> */}
-                </AboutBox>
-        </AboutMeContainersLayout>
+        
     );
 }
-
-const AboutBox = styled.div`
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+const frameInAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0%);
+  }
 `;
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.frame-in {
+    animation: ${frameInAnimation} 2s forwards;
+  }
+`;
+
+const AboutBox =  styled.div<{ $view: boolean }>`
+        position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1410px;
+    min-height: calc(100vh - 140px);
+    margin: 0px auto;
+    padding: 70px 25px;
+    box-sizing: border-box;
+    gap:30px;
+    img {
+      width: 500px;
+    }
+
+    .visible {
+      opacity: 1;
+      right: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* 배경을 반투명하게 만듭니다. */
+      z-index: 9999; /* 다른 요소 위에 표시합니다. */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent; /* 배경을 투명하게 합니다. */
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .aboutcontainer {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: auto; /* 모달 내용이 넘칠 경우 스크롤 표시합니다. */
+    }
+`;
+const Attbg = styled.div`
+position: absolute;
+width: 500px;
+height: 100%;
+min-height: 600px;
+background: url(../../src/resource/img/my-img.jpg) 22% 0% no-repeat;
+background-size: 900px auto;
+background-attachment: fixed;
+filter: brightness(80%);
+z-index: 0;
+`
+
+const Emoji = styled.div`
+cursor: pointer;
+    position: relative;
+    .emoji-box {
+      position: absolute;
+    background-color: rgb(57, 62, 70);
+    padding: 0.5rem 1.5rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    color: rgb(238, 238, 238);
+    left: -1rem;
+    top: 1.8rem;
+    transform: rotate(-10deg);
+    border: 0.2rem solid white;
+    }
+    img {
+      position: absolute;
+    left: 4rem;
+    top: 4rem;
+    width: 190px;
+    height: 178px;
+    fill: none;
+    border-radius: 50%;
+    }
+
+    .circle {
+      width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background-color: rgb(0, 173, 181);
+    }
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 // const AboutMeInfos = styled.div`
 //     /* -webkit-box-sizing: border-box;
 //     max-width: 59rem;
@@ -97,10 +225,20 @@ const AboutBox = styled.div`
 // `;
 
 const AboutMeContainersLayout = styled.div`
-background-color: rgb(27, 29, 32);
-height: 100%;
+/* background-color: rgb(27, 29, 32);
+height: 100vh;
 color:white;
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; */
+    margin: 60px auto 0;
+    width: 80%;
+    height: calc(100vh - 60px);
 
+    @media screen and (max-width: 480px) {
+        height: 100%;
+    }
     /* display: flex; */
     /* grid-template-columns: 1fr;
     row-gap: 15rem; */
