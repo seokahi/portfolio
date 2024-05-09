@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { motion } from "framer-motion";
 import TextTypingAni from '../../hook/textAnimation';
 import { useEffect, useState } from 'react';
-import { Button } from '../common/Scroll';
+import { MoveButton } from '../common/Scroll';
 
 
 export default function IntroduceText() {
@@ -37,8 +37,8 @@ export default function IntroduceText() {
 
     return (
         <TextWrapper>
-            <TextTypingAni text={'KAHI PORTFOLIO'}/>
-            {showButton && <Button onClick={handleChildClick}></Button>}
+            <TextTypingAni text={`KAHI\n PORTFOLIO`} />
+            {showButton && <MoveButton onClick={handleChildClick}></MoveButton>}
         </TextWrapper>
     );
 }
@@ -46,9 +46,11 @@ export default function IntroduceText() {
 
 
 const TextWrapper = styled(motion.div)`
+     font-family: "Lora", serif;
     position: absolute;
     width: 100%;
     top: 37vh;
-    z-index: 1000;
+    pointer-events: none;
+    box-sizing: border-box;
 `;
 

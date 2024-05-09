@@ -19,12 +19,11 @@ export default function HeaderContainer() {
     return (
     <>
         {location.pathname == '/home' ? (
-                    <Info />
+                    <Navbar />  
                 ) : (
                     <Spacer />
                 )}
                 
-         <Navbar />       
     </>
     );
 }
