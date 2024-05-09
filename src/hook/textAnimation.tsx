@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 interface AnimationProps {
@@ -9,8 +9,34 @@ const TextTypingAni = ({ text }: AnimationProps) => {
     const [sequence, setSequence] = useState<string>("");
     const [textCount, setTextCount] = useState<number>(0);
     const [isTypingPaused, setIsTypingPaused] = useState<boolean>(false);
+    const txtRef = useRef<HTMLDivElement | null>(null);
+    useEffect(() => {
+        const callback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setTextCount(0);
+                    setSequence("");
+                    setIsTypingPaused(false);
+                }
+            });
+        };
+
+        const options = {
+            threshold: 0,
+        };
+
+        if (txtRef.current) {
+            const observer = new IntersectionObserver(callback, options);
+            observer.observe(txtRef.current);
+
+            return () => {
+                observer.disconnect();
+            };
+        }
+    }, []);
 
     useEffect(() => {
+
         const typingInterval = setInterval(() => {
             if (isTypingPaused) {
                 clearInterval(typingInterval);
@@ -36,25 +62,40 @@ const TextTypingAni = ({ text }: AnimationProps) => {
     }, [text, textCount, isTypingPaused]);
 
     return (
-        <Title>
+        <Title ref={txtRef}>
             {sequence}
         </Title>
     );
 };
 
 const Title = styled.h1`
-        font-family: 'PartialSansKR-Regular';
-        font-size:90px;
-        font-weight: 900;
-        text-align: center;
-        color: white;
-        @media (max-width: 1075px) {
-          font-size:75px;
-        }
+     font-family: "DM Serif Display", serif;
+    font-size: 100px;
+      text-align: center;
+      color: white;
+      white-space: pre-line; 
 
-        @media (max-width: 576px) {
-          font-size:30px;
-        }
+      @media  (max-width: 480px) {
+
+        font-size: 3rem;
+
+}
+    @media  (max-width: 768px) {
+
+            font-size: 3.375rem;
+
+    }
+    @media (max-width: 992px) {
+
+            font-size: 5rem;
+
+    }
+    @media (max-width: 1200px) {
+
+            font-size: 5.625rem;
+
+    }
+
 `;
 
 export default TextTypingAni;
