@@ -6,7 +6,7 @@ interface Props {
   onClick: () => void;
 };
 
-export const Button = ({ onClick }: Props) => {
+export const MoveButton = ({ onClick }: Props) => {
   return (
     <ButtonWrapper>
     <ButtonBox onClick={onClick} >
@@ -34,7 +34,6 @@ const ButtonWrapper =styled.div`
     animation: fadeIn 1s ease-in-out;
 `;
 const Text = styled.p`
-
       color: white;
       opacity: 0.8;
       font-size: 1rem;
@@ -47,6 +46,7 @@ const ButtonBox = styled.div`
     display: flex;
     flex-direction: column;
     left: 50%;
+    bottom:-50%;
     transform: translateX(-50%);
     transform: translateY(15vh);
     align-items: center;
@@ -63,7 +63,7 @@ const Arrow = styled(TbArrowBigDownLinesFilled)`
 
 const Circle = styled.div`
   position: absolute;
-  top:60%;
+  top:30%;
   width: 40px;
   height: 40px;
 
