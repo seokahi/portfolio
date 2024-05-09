@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import IntroduceText from '../component/introduce/introduceText'
+import FlowerAnimation from '../component/introduce/flower';
+import StarsAndMoonAnimation from '../component/introduce/Canvas';
 
 export default function MyIntroduce() {
 
@@ -8,6 +10,7 @@ export default function MyIntroduce() {
     return (
         <>
             <IntroduceContainer>
+                <StarsAndMoonAnimation/>
                     <IntroduceText/>
             </IntroduceContainer>
         </>
@@ -17,13 +20,11 @@ export default function MyIntroduce() {
 
 
 const IntroduceContainer = styled.div`
-    position:relative;
-    width: 100%;
-
     height: 100vh;
     box-sizing: border-box;
-    padding-top: 70px;
-    background: linear-gradient(-45deg, #040A26, #918e8b, #040A26);
+    background: linear-gradient(-45deg, #070c22, #2a2e39b5, #1e274d);
+    /* background-image: url;
+    background-img: 'https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/demo-bg.jpg', */
     background-size: 400% 400%;
     animation: colorChange 7s ease infinite;
 
