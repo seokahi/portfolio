@@ -3,24 +3,39 @@
 $primary-color: rgb(200, 75, 49);
 
 .about {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    max-width: 800px;
-    height: 100%;
-    z-index: 9900;
-    pointer-events: none;
-    transition: 200ms ease;
-    z-index: 10000;
-    right: 0%;
-    pointer-events: auto;
-    background-color: rgb(238, 238, 238);
-    padding: 30px;
-    box-sizing: border-box;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 1;
+    position: absolute;
+    top:-7%;
+    right: -12%;
+    width: 60%;
+    z-index: 50;
+    // position: absolute;
+    // top: 0;
+    // width: 100%;
+    // max-width: 800px;
+    // z-index: 9900;
+    // pointer-events: none;
+    // transition: 200ms ease;
+    // z-index: 10000;
+    // left: 50%;
+    // pointer-events: auto;
+    // background-color: rgb(238, 238, 238);
+    // padding: 30px;
+    // box-sizing: border-box;
+    // display:flex;
+    // flex-direction: column;
+    // align-items: center;
+    // opacity: 1;
+    // height: 100vh;
+    // position: fixed;
+    // top: -100%;
+    // right: -14%;
+    // width: 100%;
+    // max-width: 800px;
+    // overflow: auto;
+    // pointer-events: none;
+    // transition: 200ms ease;
+    // opacity: 0;
+    // z-index: 10000;
     h1 {
         margin-top: 20px;
         color: rgb(252, 210, 27);
@@ -28,15 +43,28 @@ $primary-color: rgb(200, 75, 49);
 }
 
 .back {
-    position: fixed;
+    // position: fixed;
+    // width: calc(100vw - 12px);
+    // height: 100vh;
+    // background-color: rgba(0, 0, 0, 1);
+    position: absolute;
     width: calc(100vw - 12px);
     height: 100vh;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 1); /* Fully opaque black background */
     opacity: 1;
     z-index: -6;
     transition: 200ms ease;
+    position: absolute;
+    width: calc(100vw - 12px);
+    height: 100vh;
+    left: -108%;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    z-index: -2;
+    transition: 200ms ease;
 }
+
 
 .close {
     width: 40px;
@@ -44,12 +72,25 @@ $primary-color: rgb(200, 75, 49);
     border-radius: 100%;
     border: 1px solid rgb(100, 100, 117);
     cursor: pointer;
-    transition: opacity 1000ms ease, border 200ms, background-color 200ms;
+   
 }
 
 .about-container {
-    background-color: rgb(238, 238, 238);
-    padding: 30px;
+    // background-color: rgb(238, 238, 238);
+    // padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 60px;
+    background-color: rgb(36, 38, 44);
+    box-sizing: border-box;
+
+}
+
+.about.show,
+.back.show {
+    opacity: 1; /* Show when the 'show' class is applied */
 }
 
 .card {
