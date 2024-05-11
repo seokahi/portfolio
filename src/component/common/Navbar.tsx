@@ -25,6 +25,7 @@ const Header= styled.div`
 `;
 
 const NavWrapper = styled.div`
+  font-family: "DM Serif Display", serif;
     position: relative;
     display: flex;
     width: 100%;
@@ -36,21 +37,25 @@ const NavWrapper = styled.div`
     color: white;
     font-weight: 500;
     z-index: 9999;
+    /* @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    } */
+
 `;
 
 const NavLogo = styled(Link)`
+
     display: flex;
     padding-left: 10px;
     align-items: center;
     color:white;
     font-size: 19px;
     font-weight: 800;
-    /* @media (max-width: 1140px) {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 576px) {
+    /* @media (max-width: 768px) {
       flex-direction: column;
     } */
 
