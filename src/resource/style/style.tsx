@@ -28,8 +28,7 @@ body {
   font-family: "Poppins", "Pretendard Variable", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: white;
-  background-color: rgb(21, 24, 27);
+  background-color:#040404;
   overflow-x: hidden;
 }
 

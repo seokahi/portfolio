@@ -5,7 +5,7 @@ interface titleTYpe{
 }
 export const Title = (title:titleTYpe) => {
     const options = {
-        rootMargin: '-30% 0px',
+        rootMargin: '-10% 0px',
     };
     const { ref, isInViewport } = useScrollAnimation(options);
     return (
@@ -33,7 +33,7 @@ const TitleWrapper = styled.div`
     color: rgb(255, 255, 255);
     opacity: 1;
     &.frame-in {
-    animation: ${frameInAnimation} 2s forwards;
+    animation: ${frameInAnimation} 1s forwards;
   }
 `;
 const TitleText = styled.div`
