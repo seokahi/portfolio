@@ -3,17 +3,22 @@ import { TbArrowBigDownLinesFilled } from 'react-icons/tb';
 import styled from 'styled-components';
 
 interface Props {
-  onClick: () => void;
+  handleChildClick: () => void;
 };
 
-export const MoveButton = ({ onClick }: Props) => {
+export const MoveButton = ({ handleChildClick }: Props) => {
+
+  const handleClick = () => {
+    console.log("흐음");
+    handleChildClick(); // handleChildClick 함수 호출
+  };
   return (
     <ButtonWrapper>
-    <ButtonBox onClick={onClick} >
-      <Text>MORE</Text>
-      <Circle />
-      <Arrow />
-    </ButtonBox>
+      <ButtonBox onClick={handleClick} >
+        <Text>gg</Text>
+        <Circle />
+        <Arrow />
+      </ButtonBox>
     </ButtonWrapper>
   )
 }
@@ -30,10 +35,11 @@ const ButtonWrapper =styled.div`
             transform: none;
         }
         }
-
-    animation: fadeIn 1s ease-in-out;
+    cursor: pointer;
+    animation: fadeIn 5s ease-in-out;
 `;
 const Text = styled.p`
+      font-family: 'Rora';
       color: white;
       opacity: 0.8;
       font-size: 1rem;
@@ -46,11 +52,7 @@ const ButtonBox = styled.div`
     display: flex;
     flex-direction: column;
     left: 50%;
-    bottom:-50%;
-    transform: translateX(-50%);
-    transform: translateY(15vh);
     align-items: center;
-    z-index: 1000;
 
     
 `;
@@ -63,7 +65,7 @@ const Arrow = styled(TbArrowBigDownLinesFilled)`
 
 const Circle = styled.div`
   position: absolute;
-  top:30%;
+  top:60%;
   width: 40px;
   height: 40px;
 
