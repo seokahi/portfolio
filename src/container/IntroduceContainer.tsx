@@ -1,17 +1,82 @@
 import styled from 'styled-components';
 import IntroduceText from '../component/introduce/introduceText'
-import FlowerAnimation from '../component/introduce/flower';
-import StarsAndMoonAnimation from '../component/introduce/Canvas';
+import CanvasComponent from '../component/introduce/Canvas';
+import { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setCurrent } from '../reducer/homeSlice';
+import { MoveButton } from '../component/common/Scroll';
+import { motion } from 'framer-motion';
 
 export default function MyIntroduce() {
+    const dispatch = useDispatch();
+    const [check,setCheck]= useState(false);
+    const [showButton, setShowButton] = useState(false);
+    const [buttonClicked, setButtonClicked] = useState(false);
+    const timerRef = useRef<HTMLDivElement | null>(null); // 타이머 변수 추가
+    const txtRef = useRef<HTMLDivElement | null>(null); // 텍스트 요소 ref 추가
 
+    
+    const handleChildClick = () => {
+        console.log("눌렷니");
+        dispatch(setCurrent("ABOUT"));
+        setButtonClicked(true);
+    };
+
+   
+
+    useEffect(() => {
+        // Intersection Observer를 사용하여 스크롤 감지
+        const callback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // 요소가 뷰 포인트에 나타났을 때
+                    setCheck(true);
+                }
+                else {
+                    setCheck(false);
+                    setShowButton(false);
+                }
+            });
+        };
+
+        const options = {
+            threshold: 0,
+        };
+
+        if (timerRef.current) {
+            const observer = new IntersectionObserver(callback, options);
+            observer.observe(timerRef.current);
+
+            return () => {
+                observer.disconnect();
+            };
+        }
+    }, []);
+
+
+    useEffect(() => {
+        // 2초 후에 버튼 보이기
+        const showTimer = setTimeout(() => {
+            setShowButton(true);
+        }, 2000);
+
+        // 페이지에 돌아왔을 때 타이머 재설정
+        return () => {
+            clearTimeout(showTimer);
+        };
+    }, [check]);
 
 
     return (
         <>
-            <IntroduceContainer>
-                <StarsAndMoonAnimation/>
-                    <IntroduceText/>
+            <IntroduceContainer  ref={timerRef}>
+                <IntroduceText/>
+                {/* <CanvasComponent/> */}
+                {showButton && (
+                <div>
+                    <MoveButton handleChildClick={handleChildClick}></MoveButton>
+                </div>
+            )}
             </IntroduceContainer>
         </>
     );
@@ -19,17 +84,17 @@ export default function MyIntroduce() {
 
 
 
-const IntroduceContainer = styled.div`
+const IntroduceContainer = styled(motion.div)`
     height: 100vh;
     box-sizing: border-box;
-    background: linear-gradient(-45deg, #070c22, #2a2e39b5, #1e274d);
+
     /* background-image: url;
     background-img: 'https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/demo-bg.jpg', */
-    background-size: 400% 400%;
-    animation: colorChange 7s ease infinite;
+    /* background-size: 400% 400%;
+    animation: colorChange 7s ease infinite; */
 
 
-    @keyframes colorChange{
+    /* @keyframes colorChange{
     0%{
         background-position: 0% 50%;
     }
@@ -39,34 +104,16 @@ const IntroduceContainer = styled.div`
     100%{
         background-position: 0% 50%;
     }
-}
+} */
 
     @media (max-width: 768px) {
         border-bottom-left-radius: 20vw;
         border-bottom-right-radius: 20vw;
     }
     @media (max-width: 576px) {
-        padding-top: 8.5rem;
-        height: 25rem;
+
     }
     
     
 `;
 
-// const ContentsWrapper = styled.div`
-//     width: 750px;
-//     margin: 3rem auto;
-//     display: flex;
-//     justify-content: space-between;
-//     @media (min-height: 700px) {
-//         margin-top: calc(
-//             40vh - ${7 * 0.4}rem - ${520 * 0.4}px
-//         ); // header 부분 제외한 화면 크기의 위에서 40% 위치
-//     }
-//     @media (max-width: 768px) {
-//         width: unset;
-//     }
-//     @media (max-width: 576px) {
-//         margin: 1rem auto;
-//     }
-// `;
