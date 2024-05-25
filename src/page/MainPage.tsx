@@ -16,7 +16,7 @@ export default function MainPage() {
     return (
         <>
             <div>
-                <HeaderContainer />
+                {/* <HeaderContainer /> */}
             </div>
             <main>
                 <Outlet />
